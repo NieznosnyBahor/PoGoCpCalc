@@ -18,7 +18,7 @@ public class Frame extends javax.swing.JFrame {
      */
     public Frame() {
         initComponents();
-        loadComponents();
+        // loadComponents(); ?? Po co to?
 
     }
 
@@ -128,7 +128,6 @@ public class Frame extends javax.swing.JFrame {
         });
 
         b_checkIt.setText("Check it!");
-        b_checkIt.setEnabled(false);
         b_checkIt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b_checkItActionPerformed(evt);
@@ -318,52 +317,41 @@ public class Frame extends javax.swing.JFrame {
     private void combo_chooseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_chooseActionPerformed
 
         int index = combo_choose.getSelectedIndex();
+        tf_base_sta.setText(Integer.toString(Database.pokemonStats[index][1]));
         tf_base_att.setText(Integer.toString(Database.pokemonStats[index][2]));
         tf_base_def.setText(Integer.toString(Database.pokemonStats[index][3]));
-        tf_base_sta.setText(Integer.toString(Database.pokemonStats[index][1]));
+        
 
     }//GEN-LAST:event_combo_chooseActionPerformed
 
     private void b_catchItActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_catchItActionPerformed
-        double coe_att = Integer.parseInt(tf_base_att.getText()) + Integer.parseInt(tf_iv_att.getText());
-        double coe_def = Math.sqrt(Integer.parseInt(tf_base_def.getText()) + Integer.parseInt(tf_iv_def.getText()));
-        double coe_sta = Math.sqrt(Integer.parseInt(tf_base_sta.getText()) + Integer.parseInt(tf_iv_sta.getText()));
-        double coe_lvl = Math.pow(Database.levelMultiplier.get(Double.parseDouble(tf_level.getText())), 2);
-        double wynik   = ((coe_att * coe_def * coe_sta) / 10) * coe_lvl;
-        int wynikInt = (int) wynik;
+        String data[] = {tf_base_att.getText(), tf_base_def.getText(),tf_base_sta.getText(),
+                         tf_iv_att.getText(), tf_iv_def.getText(), tf_iv_sta.getText(), tf_level.getText()};
+        String answer = Database.catchData(data);
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         //System.out.format("WYNIK CP: " + "%.1f%n", wynik);
-        System.out.println("WYNIK CP: " + (int)wynik);
+        System.out.println("WYNIK CP: " + answer);
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"); 
-        tf_answer.setText(Integer.toString(wynikInt));
+        tf_answer.setText(answer);
+        
+        
+        
 
 //         Result result = new Result(wynik);
 //         result.setVisible(true);
     }//GEN-LAST:event_b_catchItActionPerformed
 
     private void b_checkItActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_checkItActionPerformed
-        try {
-            if (       Integer.parseInt(tf_base_att.getText()) > 0 && Integer.parseInt(tf_base_att.getText()) <= 510
-                    && Integer.parseInt(tf_base_def.getText()) > 0 && Integer.parseInt(tf_base_def.getText()) <= 510
-                    && Integer.parseInt(tf_base_sta.getText()) > 0 && Integer.parseInt(tf_base_sta.getText()) <= 510
-                    && Integer.parseInt(tf_iv_att.getText()) >= 0 && Integer.parseInt(tf_iv_att.getText()) <= 15
-                    && Integer.parseInt(tf_iv_def.getText()) >= 0 && Integer.parseInt(tf_iv_def.getText()) <= 15
-                    && Integer.parseInt(tf_iv_sta.getText()) >= 0 && Integer.parseInt(tf_iv_sta.getText()) <= 15
-                    && Integer.parseInt(tf_level.getText()) >= 1 && Integer.parseInt(tf_level.getText()) <= 40) 
-            {    
-                System.out.println("Everything is good :)");
-            } 
-            else
-            {
-                System.out.println("Something went wrong :(");
-                System.out.println("Please check values againg!!!");
-            }
-        } 
-        catch (Exception e) {
-            System.out.println("Something went wrong :(");
-            System.out.println("Please check values againg!!!");
+        String data[] = {tf_base_att.getText(), tf_base_def.getText(),tf_base_sta.getText(),
+                         tf_iv_att.getText(), tf_iv_def.getText(), tf_iv_sta.getText(), tf_level.getText()};
+        if(Database.checkData(data))
+        {
+            JOptionPane.showMessageDialog(null, "All right :)");
         }
-
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Something went wrong :(");
+        }
     }//GEN-LAST:event_b_checkItActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

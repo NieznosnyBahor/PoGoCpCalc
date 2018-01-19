@@ -1,0 +1,22 @@
+********************************************************************************
+
+    - link:
+    - https://github.com/NieznosnyBahor/PoGoCpCalc.git
+
+********************************************************************************
+
+Version Alpha 1.0
+Added funcionality:
+    - First GUI
+    - Accesible database class which contains methods and fields to calc CP of Pokemon
+    - Everything is good... so far.
+
+********************************************************************************
+
+Version Alpha 1.01
+Changes:
+    - Adaptation project to MVC pattern
+    - Executable (enumerated) methods are moved from Main Frame class to Database class
+    - Added field (textfield) in Frame to show answer
+
+********************************************************************************
