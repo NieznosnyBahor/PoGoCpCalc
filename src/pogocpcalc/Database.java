@@ -19,7 +19,7 @@ import static pogocpcalc.Database.levelMultiplier;
  */
 public abstract class Database {
 
-    final static int NUMBER_OF_POKEMON = 27;
+    final static int NUMBER_OF_POKEMON = 28;
 
     static Map<Double, Double> levelMultiplier = new HashMap<Double, Double>();
     //static String pokemonNamesComboBox[] = new String[NUMBER_OF_POKEMON];
