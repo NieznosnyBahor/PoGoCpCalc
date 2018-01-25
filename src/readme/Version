@@ -20,3 +20,16 @@ Changes:
     - Added field (textfield) in Frame to show answer
 
 ********************************************************************************
+
+Version Alpha 1.02
+
+Added funcionality:
+    - Convertion Base Stats to PoGo Stats // no matter how, but it works...
+    - Added functions to count how many candies user requires to evolve number of Pokemons
+    = Added functions to count how many Pokemons user requires to evolve from number of candies
+
+https://pokemongo.gamepress.gg/node/1581
+https://pokemongo.gamepress.gg/pokemon-attack-explanation
+https://pokemongo.gamepress.gg/damage-mechanics
+https://pokemongo.gamepress.gg/cp-multiplier
+********************************************************************************
