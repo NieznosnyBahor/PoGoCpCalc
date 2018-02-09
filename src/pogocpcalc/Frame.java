@@ -540,7 +540,7 @@ public class Frame extends javax.swing.JFrame {
             .addGap(0, 201, Short.MAX_VALUE)
         );
 
-        jTabbedPane.addTab("DMG", jPanel7);
+        jTabbedPane.addTab("DataBase", jPanel7);
 
         jpBottom.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 

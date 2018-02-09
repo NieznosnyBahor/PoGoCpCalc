@@ -10,7 +10,6 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-import javax.swing.JTextField;
 import static pogocpcalc.Database.levelMultiplier;
 
 /**
@@ -19,17 +18,24 @@ import static pogocpcalc.Database.levelMultiplier;
  */
 public abstract class Database {
 
-    final static int NUMBER_OF_POKEMON = 28;
+    final static int NUMBER_OF_POKEMON = 31;
 
     static Map<Double, Double> levelMultiplier = new HashMap<Double, Double>();
-    //static String pokemonNamesComboBox[] = new String[NUMBER_OF_POKEMON];
-    static String pokemonNames[] = new String[NUMBER_OF_POKEMON];
-    static int pokemonStats[][] = new int[NUMBER_OF_POKEMON][4]; // [id/sta/att/def]
+    
+    static String[][] rawPokemonInput = new String[NUMBER_OF_POKEMON][7];
+    static int    pokemonStats[][] = new int[NUMBER_OF_POKEMON][4]; // [id/sta/att/def]
+    static String pokemonNames[]   = new String[NUMBER_OF_POKEMON];
+    static String pokemonTypes[][] = new String[NUMBER_OF_POKEMON][2];
+
+    
+    
 
     static void load() throws IOException {
-        loadLevelMultipliers();
-        loadStats();
-        loadNames();
+        loadLevelMultipliers();     // +
+        loadRawPokemonSpec();       // +
+            extractStats();         // +
+            extractNames();         // +
+            extractTypes();         // +
 
     }
 
@@ -40,41 +46,6 @@ public abstract class Database {
             String line = sc.nextLine();
             String parts[] = line.split("\t");
             levelMultiplier.put(Double.parseDouble(parts[0]), Double.parseDouble(parts[1]));
-        }
-        stream.close();
-    }
-
-    private static void loadStats() throws IOException {
-        InputStream stream = Database.class.getResourceAsStream("/database/Pokemon");
-        Scanner sc = new Scanner(stream);
-        int i = 0;
-        while (sc.hasNext()) {
-            String line = sc.nextLine();
-            String parts[] = line.split("\t");
-            pokemonStats[i][0] = Integer.parseInt(parts[0]);
-            pokemonStats[i][1] = Integer.parseInt(parts[1]);
-            pokemonStats[i][2] = Integer.parseInt(parts[2]);
-            pokemonStats[i][3] = Integer.parseInt(parts[3]);
-            i++;
-        }
-
-        stream.close();
-
-    }
-
-    private static void loadNames() throws IOException {
-        InputStream stream = Database.class.getResourceAsStream("/database/Pokemon");
-        Scanner sc = new Scanner(stream);
-        int i = 0;
-        while (sc.hasNext()) {
-            String line = sc.nextLine();
-            String parts[] = line.split("\t");
-            //for (int i = 0; i < NUMBER_OF_POKEMON; i++) {
-            pokemonNames[i] = parts[4];
-            //pokemonNamesComboBox[i] = i + ". " + parts[4];
-            i++;
-            //}
-
         }
         stream.close();
     }
@@ -98,7 +69,6 @@ public abstract class Database {
             return false;
         }
     }
-
     static String catchData(String[] data) {
 
         double coe_att = Integer.parseInt(data[0]) + Integer.parseInt(data[3]);
@@ -110,8 +80,7 @@ public abstract class Database {
 
         return Integer.toString(wynikInt);
     }
-
-    static String[] convertStats(int hp, int att, int spatt, int def, int spdef, int speed) {
+    static String[] convertStats(int hp, int att, int spatt, int def, int spdef, int speed)     {
         double speedCoeff = 1.0 + ((speed - 75) * 0.002);
         double go_sta;
         go_sta = hp * 2;
@@ -154,8 +123,7 @@ public abstract class Database {
 
         return answer;
     }
-
-    static int calcNoPokemons(String Candies, String Cost, boolean transfer) {
+    static int      calcNoPokemons(String Candies, String Cost, boolean transfer)               {
         int cost = Integer.parseInt(Cost);
         int candies = Integer.parseInt(Candies);
         if(transfer)
@@ -167,8 +135,7 @@ public abstract class Database {
             return (int)(candies / (cost - 1));
         }
         }
-
-    static int calcNoCandies(String Pokemon, String Cost, boolean transfer) {
+    static int      calcNoCandies(String Pokemon, String Cost, boolean transfer)                {
         int pokemon = Integer.parseInt(Pokemon);
         int cost = Integer.parseInt(Cost);
         if(transfer)
@@ -178,6 +145,43 @@ public abstract class Database {
         else
         {
             return (int)((pokemon * (cost - 1)) + 1);
+        }
+    }
+    
+    private static void extractStats() {
+        for (int i = 0; i < NUMBER_OF_POKEMON; i++) {
+            for (int j = 0; j < 4; j++) {
+                pokemonStats[i][j] = Integer.parseInt(rawPokemonInput[i][j]);
+            }
+        }
+    }
+    private static void extractNames() {
+        for (int i = 0; i < NUMBER_OF_POKEMON; i++) {
+            pokemonNames[i] = rawPokemonInput[i][4];
+        }
+    }
+    private static void extractTypes() {
+            for (int i = 0; i < NUMBER_OF_POKEMON; i++) {
+                for (int j = 0; j < 2; j++) {
+                    pokemonTypes[i][j] = rawPokemonInput[i][j+5];
+            }
+        }
+    }
+    private static void loadRawPokemonSpec() {
+        InputStream stream = Database.class.getResourceAsStream("/database/Pokemon");
+        Scanner sc = new Scanner(stream);
+        int i = 0;
+        while (sc.hasNext()) {
+            String line = sc.nextLine();
+            String parts[] = line.split("\t");
+            rawPokemonInput[i][0] = parts[0];   // id
+            rawPokemonInput[i][1] = parts[1];   // sta
+            rawPokemonInput[i][2] = parts[2];   // att
+            rawPokemonInput[i][3] = parts[3];   // def
+            rawPokemonInput[i][4] = parts[4];   // name
+            rawPokemonInput[i][5] = parts[5];   // type1
+            rawPokemonInput[i][6] = parts[6];   // type2
+            i++;
         }
     }
 

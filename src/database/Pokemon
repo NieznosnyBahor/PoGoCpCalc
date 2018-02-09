@@ -1,28 +1,31 @@
-1	90	118	118	Bulbasaur
-2	120	151	151	Ivysaur
-3	160	198	198	Venusaur
-4	78	116	96	Charmander
-5	116	158	129	Charmeleon
-6	156	223	176	Charizard
-7	88	94	122	Squirtle
-8	118	126	155	Wartortle
-9	158	171	210	Blastoise
-10	90	55	62	Caterpie
-11	100	45	94	Metapod
-12	120	167	151	Butterfree
-13	80	63	55	Weedle
-14	90	46	86	Kakuna
-15	130	169	150	Beedrill
-16	80	85	76	Pidgey
-17	126	117	108	Pidgeotto
-18	166	166	157	Pidgeot
-129	40	29	102	Magikarp
-130	190	237	197	Gyarados
-133	110	104	121	Eevee
-134	260	205	177	Vaporeon
-135	130	232	201	Jolteon
-136	130	246	204	Flareon
-289	273	290	183	Slaking
-320	260	136	68	Wailmer
-500	510	510	510	Conqueror
-501	510	694	694	Conqueror+
+1	90	118	118	Bulbasaur	Grass	Poison
+2	120	151	151	Ivysaur	Grass	Poison
+3	160	198	198	Venusaur	Grass	Poison
+4	78	116	96	Charmander	Fire	null
+5	116	158	129	Charmeleon	Fire	null
+6	156	223	176	Charizard	Fire	Flying
+7	88	94	122	Squirtle	Water	null
+8	118	126	155	Wartortle	Water	null
+9	158	171	210	Blastoise	Water	null
+10	90	55	62	Caterpie	Bug	null
+11	100	45	94	Metapod	Bug	null
+12	120	167	151	Butterfree	Bug	Flying
+13	80	63	55	Weedle	Bug	null
+14	90	46	86	Kakuna	Bug	null
+15	130	169	150	Beedrill	Bug	Flying
+16	80	85	76	Pidgey	Normal	Flying
+17	126	117	108	Pidgeotto	Normal	Flying
+18	166	166	157	Pidgeot	Normal	Flying
+129	40	29	102	Magikarp	Water	null
+130	190	237	197	Gyarados	Water	null
+133	110	104	121	Eevee	Normal	null
+134	260	205	177	Vaporeon	Water	null
+135	130	232	201	Jolteon	Electric	null
+136	130	246	204	Flareon	Fire	null
+289	273	290	183	Slaking	Normal	null
+320	260	136	68	Wailmer	Water	null
+382	182	270	251	Kyogre	Water	null
+383	182	270	251	Groudon	Ground	null
+384	191	284	170	Rayquaza	Dragon	Flying
+500	510	510	510	Conqueror	Normal	Dragon
+501	510	694	694	Conqueror+	Normal	Dragon

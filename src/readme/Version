@@ -9,7 +9,7 @@ Version Alpha 1.0
 Added funcionality:
     - First GUI
     - Accesible database class which contains methods and fields to calc CP of Pokemon
-    - Everything is good... so far.
+    - Everything is good... so far
 
 ********************************************************************************
 
@@ -32,4 +32,13 @@ https://pokemongo.gamepress.gg/node/1581
 https://pokemongo.gamepress.gg/pokemon-attack-explanation
 https://pokemongo.gamepress.gg/damage-mechanics
 https://pokemongo.gamepress.gg/cp-multiplier
+
+********************************************************************************
+
+Version Alpha 1.03
+
+Changes:
+    - Methods in class Database was simplified
+    - Standarized raw input, stats, names and types of Pokemons
+
 ********************************************************************************
