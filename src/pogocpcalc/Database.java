@@ -18,7 +18,7 @@ import static pogocpcalc.Database.levelMultiplier;
  */
 public abstract class Database {
 
-    final static int NUMBER_OF_POKEMON = 31;
+    final static int NUMBER_OF_POKEMON = 33;
 
     static Map<Double, Double> levelMultiplier = new HashMap<Double, Double>();
     

@@ -22,10 +22,12 @@
 134	260	205	177	Vaporeon	Water	null
 135	130	232	201	Jolteon	Electric	null
 136	130	246	204	Flareon	Fire	null
+150	193	300	182	Mewtwo	Psychic	null
 289	273	290	183	Slaking	Normal	null
 320	260	136	68	Wailmer	Water	null
 382	182	270	251	Kyogre	Water	null
 383	182	270	251	Groudon	Ground	null
 384	191	284	170	Rayquaza	Dragon	Flying
-500	510	510	510	Conqueror	Normal	Dragon
-501	510	694	694	Conqueror+	Normal	Dragon
+500	510	510	510	Conqueror	null	null
+501	510	694	694	Conqueror+	null	null
+502	212	330	200	Mewtwo+	Psychic	null

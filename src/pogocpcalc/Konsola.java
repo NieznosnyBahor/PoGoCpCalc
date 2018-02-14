@@ -9,4 +9,8 @@ public abstract class Konsola {
     {
         System.out.println(s);
     }
+    static void printError(String s)
+    {
+        System.out.println(s);
+    }
 }
