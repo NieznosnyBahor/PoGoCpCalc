@@ -50,4 +50,14 @@ Changes:
     - UI CP calc improved
 
 ********************************************************************************
+Version 1.05
+
+Changes:
+    - Replaced JTextField on JSpinner components on few fields
+    - Added automatic count NUMBER_OF_POKEMON field
+    - Prepare for introduction Database and DmgCalc section
+    - Added Maps for charge, fast and types of attacks  
+    - Added logic to Database section, without attacks definition
+
+********************************************************************************
 

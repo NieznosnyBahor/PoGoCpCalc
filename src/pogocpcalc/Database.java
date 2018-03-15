@@ -18,15 +18,27 @@ import static pogocpcalc.Database.levelMultiplier;
  */
 public abstract class Database {
 
-    final static int NUMBER_OF_POKEMON = 33;
+    
+    
+    enum Types {
+        Bug, Dark, Dragon, Electric, Fairy, Fight, Fire, Flying, Ghost, 
+        Grass, Ground, Ice, Normal, Poison, Psychic, Rock, Steel, Water
+    }
+    
+    final static int NUMBER_OF_POKEMON = loadNumberOfPokemon();
 
     static Map<Double, Double> levelMultiplier = new HashMap<Double, Double>();
     
     static String[][] rawPokemonInput = new String[NUMBER_OF_POKEMON][7];
     static int    pokemonStats[][] = new int[NUMBER_OF_POKEMON][4]; // [id/sta/att/def]
-    static String pokemonNames[]   = new String[NUMBER_OF_POKEMON];
+    static String pokemonNames[]   = new String[NUMBER_OF_POKEMON];  
     static String pokemonTypes[][] = new String[NUMBER_OF_POKEMON][2];
-
+    
+    static Map<String, Double[]> attacksFast   = new HashMap<String, Double[]>();
+    static Map<String, Double[]> attacksCharge = new HashMap<String, Double[]>();
+    static Map<String, Types> attacksTypes = new HashMap<String, Types>();
+    
+    static String pokemonNamesComboBox[] = new String[NUMBER_OF_POKEMON];
     
     
 
@@ -35,6 +47,7 @@ public abstract class Database {
         loadRawPokemonSpec();       // +
             extractStats();         // +
             extractNames();         // +
+            extractNamesComboBox(); // +
             extractTypes();         // +
 
     }
@@ -50,7 +63,7 @@ public abstract class Database {
         stream.close();
     }
 
-    static boolean checkData(String[] data) {
+    static boolean  checkData(String[] data) {
 
         try {
             if (Integer.parseInt(data[0]) > 0 && Integer.parseInt(data[0]) <= 510
@@ -69,7 +82,7 @@ public abstract class Database {
             return false;
         }
     }
-    static String catchData(String[] data) {
+    static String   catchData(String[] data) {
 
         double coe_att = Integer.parseInt(data[0]) + Integer.parseInt(data[3]);
         double coe_def = Math.sqrt(Integer.parseInt(data[1]) + Integer.parseInt(data[4]));
@@ -77,7 +90,10 @@ public abstract class Database {
         double coe_lvl = Math.pow(levelMultiplier.get(Double.parseDouble(data[6])), 2);
         double wynik = ((coe_att * coe_def * coe_sta) / 10) * coe_lvl;
         int wynikInt = (int) wynik;
-
+        if(wynikInt < 10)
+        {
+            wynikInt = 10;
+        }
         return Integer.toString(wynikInt);
     }
     static String[] convertStats(int hp, int att, int spatt, int def, int spdef, int speed)     {
@@ -96,7 +112,7 @@ public abstract class Database {
         }
         go_att = ((up * 0.875) + (down * 0.125)) * 2;
         go_att = Math.round(go_att);
-        System.out.println(go_att);
+        //System.out.println(go_att);
         go_att *= speedCoeff;
         go_att = Math.round(go_att);
 
@@ -160,6 +176,11 @@ public abstract class Database {
             pokemonNames[i] = rawPokemonInput[i][4];
         }
     }
+    private static void extractNamesComboBox(){
+        for (int i = 0; i < NUMBER_OF_POKEMON; i++) {
+            pokemonNamesComboBox[i] = pokemonStats[i][0] +". "+ pokemonNames[i];
+        }
+    }
     private static void extractTypes() {
             for (int i = 0; i < NUMBER_OF_POKEMON; i++) {
                 for (int j = 0; j < 2; j++) {
@@ -168,7 +189,7 @@ public abstract class Database {
         }
     }
     private static void loadRawPokemonSpec() {
-        InputStream stream = Database.class.getResourceAsStream("/database/Pokemon");
+        InputStream stream = Database.class.getResourceAsStream("/database/Pokemon_Stats");
         Scanner sc = new Scanner(stream);
         int i = 0;
         while (sc.hasNext()) {
@@ -185,5 +206,33 @@ public abstract class Database {
         }
     }
 
-
+    private static int loadNumberOfPokemon() {
+        int nope = 0;
+        InputStream stream = Database.class.getResourceAsStream("/database/Pokemon_Stats");
+        Scanner sc = new Scanner(stream);
+        while(sc.hasNextLine())
+        {
+            nope++;
+            sc.nextLine();
+        }
+        
+        return nope;
+    }
+    static String[] getPokemonInfo(int index) {
+        String data[] = new String[5];     // sta/att/def / type1 / type2
+        data[0] = Integer.toString(pokemonStats[index][1]);
+        data[1] = Integer.toString(pokemonStats[index][2]);
+        data[2] = Integer.toString(pokemonStats[index][3]);
+        data[3] = pokemonTypes[index][0];
+        data[4] = pokemonTypes[index][1];
+        
+        
+        
+        return data;
+    }
+    
+    static String[] getAttackInfo()
+    {
+        return null;
+    }
 }

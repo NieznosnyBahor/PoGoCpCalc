@@ -1,0 +1,62 @@
+Bug Bite	5	6	10.00	12.00	0.50	Bug
+Fury Cutter	3	6	7.50	15.00	0.40	Bug
+Infestation	10	14	9.09	12.73	1.10	Bug
+Struggle Bug	15	15	10.00	10.00	1.50	Bug
+Bite	6	4	12.00	8.00	0.50	Dark
+Feint Attack	10	9	11.11	10.00	0.90	Dark
+Sucker Punch	7	8	10.00	11.43	0.70	Dark
+Snarl	12	12	10.91	10.91	1.10	Dark
+Dragon Breath	6	4	12.00	8.00	0.50	Dragon
+Dragon Tail	15	9	13.64	8.18	1.10	Dragon
+Spark	6	9	8.57	12.86	0.70	Electric
+Thunder Shock	5	8	8.33	13.33	0.60	Electric
+Charge Beam	8	15	7.27	13.64	1.10	Electric
+Volt Switch	20	25	8.70	10.87	2.30	Electric
+Karate Chop	8	10	10.00	12.50	0.80	Fight
+Low Kick	6	6	10.00	10.00	0.60	Fight
+Rock Smash	15	10	11.54	7.69	1.30	Fight
+Counter	12	8	13.33	8.89	0.90	Fight
+Ember	10	10	10.00	10.00	1.00	Fire
+Fire Fang	11	8	12.22	8.89	0.90	Fire
+Fire Spin	14	10	12.73	9.09	1.10	Fire
+Peck	10	10	10.00	10.00	1.00	Flying
+Wing Attack	8	9	10.00	11.25	0.80	Flying
+Air Slash	14	10	11.67	8.33	1.20	Flying
+Lick	5	6	10.00	12.00	0.50	Ghost
+Shadow Claw	9	6	12.86	8.57	0.70	Ghost
+Astonish	8	14	7.27	12.73	1.10	Ghost
+Hex	10	15	8.33	12.50	1.20	Ghost
+Razor Leaf	13	7	13.00	7.00	1.00	Grass
+Vine Whip	7	6	11.67	10.00	0.60	Grass
+Bullet Seed	8	14	7.27	12.73	1.10	Grass
+Mud Shot	5	7	8.33	11.67	0.60	Ground
+Mud Slap	15	12	10.71	8.57	1.40	Ground
+Frost Breath	10	8	11.11	8.89	0.90	Ice
+Ice Shard	12	12	10.00	10.00	1.20	Ice
+Powder Snow	6	15	6.00	15.00	1.00	Ice
+Tackle	5	5	10.00	10.00	0.50	Normal
+Pound	7	6	11.67	10.00	0.60	Normal
+Quick Attack	8	10	10.00	12.50	0.80	Normal
+Scratch	6	4	12.00	8.00	0.50	Normal
+Cut	5	5	10.00	10.00	0.50	Normal
+Transform	0	0	0.00	0.00	2.23	Normal
+Hidden Power	15	15	10.00	10.00	1.50	Normal
+Present	5	20	3.85	15.38	1.30	Normal
+Yawn	0	15	0.00	0.00	1.70	Normal
+Take Down	8	10	6.67	8.33	1.20	Normal
+Acid	9	8	11.25	10.00	0.80	Poison
+Poison Sting	5	7	8.33	11.67	0.60	Poison
+Poison Jab	10	7	12.50	8.75	0.80	Poison
+Confusion	20	15	12.50	9.38	1.60	Psychic
+Psycho Cut	5	8	8.33	13.33	0.60	Psychic
+Zen Headbutt	12	10	10.91	9.09	1.10	Psychic
+Extrasensory	12	12	10.91	10.91	1.10	Rock
+Rock Throw	12	7	13.33	7.78	0.90	Rock
+Bullet Punch	9	10	10.00	11.11	0.90	Steel
+Metal Claw	8	7	11.43	10.00	0.70	Steel
+Steel Wing	11	6	13.75	7.50	0.80	Steel
+Iron Tail	15	7	13.64	6.36	1.10	Steel
+Bubble	12	14	10.00	11.67	1.20	Water
+Water Gun	5	5	10.00	10.00	0.50	Water
+Splash	0	20	0.00	0.00	1.73	Water
+Waterfall	16	8	13.33	6.67	1.20	Water

@@ -19,6 +19,7 @@ public class PoGoCpCalc {
     public static void main(String[] args) throws IOException {
         Database.load();
         Frame frame = new Frame();
+        frame.pack();
         frame.setVisible(true);
     }
     
