@@ -44,7 +44,10 @@ public class FrameCpDist extends javax.swing.JFrame {
                                      Integer.toString(i), Integer.toString(j), Integer.toString(k), arr[3]};
                     String cp = Database.catchData(data);
 //                    System.out.println("CP of pokemon: " + cp);
-                    model.addRow(new Object[]{i, j, k, cp});
+                    Double ivD = ((i + j + k) / 45.0) * 100;
+                    int ivInt = ivD.intValue();
+                    String iv = Double.toString(ivD);
+                    model.addRow(new Object[]{ivInt, i, j, k, cp});
                 }
             }
         }
@@ -73,14 +76,14 @@ public class FrameCpDist extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ATT", "DEF", "STA", "CP"
+                "IV SUM", "ATT", "DEF", "STA", "CP"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -94,16 +97,13 @@ public class FrameCpDist extends javax.swing.JFrame {
         jTable1.setColumnSelectionAllowed(true);
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(0).setHeaderValue("ATT");
             jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setHeaderValue("DEF");
             jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setHeaderValue("STA");
             jTable1.getColumnModel().getColumn(3).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setHeaderValue("CP");
+            jTable1.getColumnModel().getColumn(4).setResizable(false);
         }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

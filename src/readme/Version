@@ -60,4 +60,10 @@ Changes:
     - Added logic to Database section, without attacks definition
 
 ********************************************************************************
+Version 1.06
 
+Changes:
+    - Added Settings class
+    - Added library jTattoo.jar
+
+********************************************************************************

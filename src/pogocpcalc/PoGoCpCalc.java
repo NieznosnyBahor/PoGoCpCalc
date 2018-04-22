@@ -6,21 +6,36 @@
 package pogocpcalc;
 
 import java.io.IOException;
+import javax.swing.UIManager;
 
 /**
  *
  * @author admin
  */
 public class PoGoCpCalc {
-
+    static Frame frame;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
         Database.load();
-        Frame frame = new Frame();
+        frame = new Frame();
         frame.pack();
         frame.setVisible(true);
     }
-    
+
+    static void restart(String str) {
+        frame.dispose();
+        try {
+            UIManager.setLookAndFeel(str);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        frame = new Frame();
+//       Frame frame = new Frame();
+       frame.pack();
+       frame.setVisible(true);
+       
+    }
+
 }
