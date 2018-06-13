@@ -26,10 +26,10 @@
 26	120	193	165	Raichu	Electric	null
 27	100	126	145	Sandshrew	Ground	null
 28	150	182	202	Sandslash	Ground	null
-29	110	86	94	Nidoran♀	Poison	null
+29	110	86	94	Nidoran (F)	Poison	null
 30	140	117	126	Nidorina	Poison	null
 31	180	180	174	Nidoqueen	Poison	Ground
-32	92	105	76	Nidoran♂	Poison	null
+32	92	105	76	Nidoran (M)	Poison	null
 33	122	137	112	Nidorino	Poison	null
 34	162	204	157	Nidoking	Poison	Ground
 35	140	107	116	Clefairy	Fairy	null
@@ -99,6 +99,9 @@
 99	110	240	214	Kingler	Water	null
 100	80	109	114	Voltorb	Electric	null
 101	120	173	179	Electrode	Electric	null
+102	120	107	140	Exeggcute	Grass	Psychic
+103	190	233	158	Exeggutor	Grass	Psychic
+103	190	230	158	Exeggutor (Alolan)	Grass	Dragon
 110	130	174	221	Weezing	Poison	null
 113	500	60	176	Chansey	Normal	null
 125	130	198	173	Electabuzz	Electric	null
@@ -116,6 +119,9 @@
 149	182	263	201	Dragonite	Dragon	Flying
 150	193	300	182	Mewtwo	Psychic	null
 242	510	129	229	Blissey	Normal	null
+246	100	115	93	Larvitar	Ground	Rock
+247	140	155	133	Pupitar	Ground	Rock
+248	200	251	212	Tyranitar	Dark	Rock
 249	212	193	323	Lugia	Flying	Psychic
 287	120	104	104	Slakoth	Normal	null
 289	273	290	183	Slaking	Normal	null
@@ -126,3 +132,4 @@
 500	510	510	510	Conqueror	null	null
 501	510	694	694	Conqueror+	null	null
 502	212	330	200	Mewtwo+	null	null
+503	190	230	158	Exeggutor (Alolan)	Grass	Dragon

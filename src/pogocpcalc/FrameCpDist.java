@@ -76,7 +76,7 @@ public class FrameCpDist extends javax.swing.JFrame {
 
             },
             new String [] {
-                "IV SUM", "ATT", "DEF", "STA", "CP"
+                "IV %", "ATT", "DEF", "STA", "CP"
             }
         ) {
             Class[] types = new Class [] {

@@ -17,9 +17,12 @@ import static pogocpcalc.Database.levelMultiplier;
  * @author nieznosnybahor
  */
 public abstract class Database {
-
     
+    //
+    // POLA:
+    //
     
+    // Typy dostępne w DB
     enum Types {
         Bug, Dark, Dragon, Electric, Fairy, Fight, Fire, Flying, Ghost, 
         Grass, Ground, Ice, Normal, Poison, Psychic, Rock, Steel, Water
@@ -29,18 +32,24 @@ public abstract class Database {
 
     static Map<Double, Double> levelMultiplier = new HashMap<Double, Double>();
     
+    
+    // Dane pokemonów - najpierw String, pozniej obrobka do konkretnych typow danych
     static String[][] rawPokemonInput = new String[NUMBER_OF_POKEMON][7];
     static int    pokemonStats[][] = new int[NUMBER_OF_POKEMON][4]; // [id/sta/att/def]
     static String pokemonNames[]   = new String[NUMBER_OF_POKEMON];  
     static String pokemonTypes[][] = new String[NUMBER_OF_POKEMON][2];
     
+    // Dane atakow fast i charge
     static Map<String, Double[]> attacksFast   = new HashMap<String, Double[]>();
     static Map<String, Double[]> attacksCharge = new HashMap<String, Double[]>();
     static Map<String, Types> attacksTypes = new HashMap<String, Types>();
     
+    // Nazwy pokemonow przystosowane do Comboboxow
     static String pokemonNamesComboBox[] = new String[NUMBER_OF_POKEMON];
     
-    
+    //
+    // METODY:
+    //
 
     static void load() throws IOException {
         loadLevelMultipliers();     // +
@@ -51,7 +60,20 @@ public abstract class Database {
             extractTypes();         // +
 
     }
-
+    private static int loadNumberOfPokemon() {
+        int nope = 0;
+        InputStream stream = Database.class.getResourceAsStream("/database/Pokemon_Stats");
+        Scanner sc = new Scanner(stream);
+        while(sc.hasNextLine())
+        {
+            nope++;
+            sc.nextLine();
+        }
+        
+        return nope;
+    }
+    
+    // Funkcje ładowania i ekstrakcji danych wykonywanych przez konstruktor
     private static void loadLevelMultipliers() throws IOException {
         InputStream stream = Database.class.getResourceAsStream("/database/LevelMultiplier");
         Scanner sc = new Scanner(stream);
@@ -62,7 +84,49 @@ public abstract class Database {
         }
         stream.close();
     }
-
+    private static void loadRawPokemonSpec() {
+        InputStream stream = Database.class.getResourceAsStream("/database/Pokemon_Stats");
+        Scanner sc = new Scanner(stream);
+        int i = 0;
+        while (sc.hasNext()) {
+            String line = sc.nextLine();
+            String parts[] = line.split("\t");
+            rawPokemonInput[i][0] = parts[0];   // id
+            rawPokemonInput[i][1] = parts[1];   // sta
+            rawPokemonInput[i][2] = parts[2];   // att
+            rawPokemonInput[i][3] = parts[3];   // def
+            rawPokemonInput[i][4] = parts[4];   // name
+            rawPokemonInput[i][5] = parts[5];   // type1
+            rawPokemonInput[i][6] = parts[6];   // type2
+            i++;
+        }
+    }
+    private static void extractStats() {
+        for (int i = 0; i < NUMBER_OF_POKEMON; i++) {
+            for (int j = 0; j < 4; j++) {
+                pokemonStats[i][j] = Integer.parseInt(rawPokemonInput[i][j]);
+            }
+        }
+    }
+    private static void extractNames() {
+        for (int i = 0; i < NUMBER_OF_POKEMON; i++) {
+            pokemonNames[i] = rawPokemonInput[i][4];
+        }
+    }
+    private static void extractNamesComboBox(){
+        for (int i = 0; i < NUMBER_OF_POKEMON; i++) {
+            pokemonNamesComboBox[i] = pokemonStats[i][0] +". "+ pokemonNames[i];
+        }
+    }
+    private static void extractTypes() {
+            for (int i = 0; i < NUMBER_OF_POKEMON; i++) {
+                for (int j = 0; j < 2; j++) {
+                    pokemonTypes[i][j] = rawPokemonInput[i][j+5];
+            }
+        }
+    }
+    
+    // Panel CP Calc
     static boolean  checkData(String[] data) {
 
         try {
@@ -96,6 +160,8 @@ public abstract class Database {
         }
         return Integer.toString(wynikInt);
     }
+    
+    // Panel Konwersji statystyk
     static String[] convertStats(int hp, int att, int spatt, int def, int spdef, int speed)     {
         double speedCoeff = 1.0 + ((speed - 75) * 0.002);
         double go_sta;
@@ -139,6 +205,8 @@ public abstract class Database {
 
         return answer;
     }
+    
+    // Panel Konwersji cukierkow
     static int      calcNoPokemons(String Candies, String Cost, boolean transfer)               {
         int cost = Integer.parseInt(Cost);
         int candies = Integer.parseInt(Candies);
@@ -164,60 +232,9 @@ public abstract class Database {
         }
     }
     
-    private static void extractStats() {
-        for (int i = 0; i < NUMBER_OF_POKEMON; i++) {
-            for (int j = 0; j < 4; j++) {
-                pokemonStats[i][j] = Integer.parseInt(rawPokemonInput[i][j]);
-            }
-        }
-    }
-    private static void extractNames() {
-        for (int i = 0; i < NUMBER_OF_POKEMON; i++) {
-            pokemonNames[i] = rawPokemonInput[i][4];
-        }
-    }
-    private static void extractNamesComboBox(){
-        for (int i = 0; i < NUMBER_OF_POKEMON; i++) {
-            pokemonNamesComboBox[i] = pokemonStats[i][0] +". "+ pokemonNames[i];
-        }
-    }
-    private static void extractTypes() {
-            for (int i = 0; i < NUMBER_OF_POKEMON; i++) {
-                for (int j = 0; j < 2; j++) {
-                    pokemonTypes[i][j] = rawPokemonInput[i][j+5];
-            }
-        }
-    }
-    private static void loadRawPokemonSpec() {
-        InputStream stream = Database.class.getResourceAsStream("/database/Pokemon_Stats");
-        Scanner sc = new Scanner(stream);
-        int i = 0;
-        while (sc.hasNext()) {
-            String line = sc.nextLine();
-            String parts[] = line.split("\t");
-            rawPokemonInput[i][0] = parts[0];   // id
-            rawPokemonInput[i][1] = parts[1];   // sta
-            rawPokemonInput[i][2] = parts[2];   // att
-            rawPokemonInput[i][3] = parts[3];   // def
-            rawPokemonInput[i][4] = parts[4];   // name
-            rawPokemonInput[i][5] = parts[5];   // type1
-            rawPokemonInput[i][6] = parts[6];   // type2
-            i++;
-        }
-    }
 
-    private static int loadNumberOfPokemon() {
-        int nope = 0;
-        InputStream stream = Database.class.getResourceAsStream("/database/Pokemon_Stats");
-        Scanner sc = new Scanner(stream);
-        while(sc.hasNextLine())
-        {
-            nope++;
-            sc.nextLine();
-        }
-        
-        return nope;
-    }
+
+    
     static String[] getPokemonInfo(int index) {
         String data[] = new String[5];     // sta/att/def / type1 / type2
         data[0] = Integer.toString(pokemonStats[index][1]);
@@ -231,8 +248,7 @@ public abstract class Database {
         return data;
     }
     
-    static String[] getAttackInfo()
-    {
+    static String[] getAttackInfo()    {
         return null;
     }
 }

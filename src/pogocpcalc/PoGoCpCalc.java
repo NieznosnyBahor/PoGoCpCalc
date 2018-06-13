@@ -23,7 +23,7 @@ public class PoGoCpCalc {
         frame.pack();
         frame.setVisible(true);
     }
-
+    
     static void restart(String str) {
         frame.dispose();
         try {

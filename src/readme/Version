@@ -26,7 +26,7 @@ Version Alpha 1.02
 Added funcionality:
     - Convertion Base Stats to PoGo Stats // no matter how, but it works...
     - Added functions to count how many candies user requires to evolve number of Pokemons
-    = Added functions to count how many Pokemons user requires to evolve from number of candies
+    - Added functions to count how many Pokemons user requires to evolve from number of candies
 
 https://pokemongo.gamepress.gg/node/1581
 https://pokemongo.gamepress.gg/pokemon-attack-explanation
@@ -65,5 +65,10 @@ Version 1.06
 Changes:
     - Added Settings class
     - Added library jTattoo.jar
+
+********************************************************************************
+
+Version 1.07
+
 
 ********************************************************************************
