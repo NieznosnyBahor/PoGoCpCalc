@@ -23,10 +23,10 @@ public abstract class Database {
     //
     
     // Typy dostępne w DB
-    enum Types {
-        Bug, Dark, Dragon, Electric, Fairy, Fight, Fire, Flying, Ghost, 
-        Grass, Ground, Ice, Normal, Poison, Psychic, Rock, Steel, Water
-    }
+//    enum Types {
+//        Bug, Dark, Dragon, Electric, Fairy, Fight, Fire, Flying, Ghost, 
+//        Grass, Ground, Ice, Normal, Poison, Psychic, Rock, Steel, Water
+//    }
     
     final static int NUMBER_OF_POKEMON = loadNumberOfPokemon();
 
@@ -42,7 +42,7 @@ public abstract class Database {
     // Dane atakow fast i charge
     static Map<String, Double[]> attacksFast   = new HashMap<String, Double[]>();
     static Map<String, Double[]> attacksCharge = new HashMap<String, Double[]>();
-    static Map<String, Types> attacksTypes = new HashMap<String, Types>();
+    //static Map<String, Types> attacksTypes = new HashMap<String, Types>();
     
     // Nazwy pokemonow przystosowane do Comboboxow
     static String pokemonNamesComboBox[] = new String[NUMBER_OF_POKEMON];
@@ -58,7 +58,6 @@ public abstract class Database {
             extractNames();         // +
             extractNamesComboBox(); // +
             extractTypes();         // +
-
     }
     private static int loadNumberOfPokemon() {
         int nope = 0;
