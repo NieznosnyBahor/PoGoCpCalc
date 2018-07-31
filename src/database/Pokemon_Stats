@@ -111,6 +111,7 @@
 134	260	205	177	Vaporeon	Water	null
 135	130	232	201	Jolteon	Electric	null
 136	130	246	204	Flareon	Fire	null
+143	320	190	190	Snorlax	Normal	null
 144	180	192	249	Articuno	Ice	Flying
 145	180	253	188	Zapdos	Electric	Flying
 146	180	251	184	Moltres	Fire	Flying
@@ -126,6 +127,9 @@
 287	120	104	104	Slakoth	Normal	null
 289	273	290	183	Slaking	Normal	null
 320	260	136	68	Wailmer	Water	null
+377	160	179	356	Regirock	Rock	null
+378	160	179	356	Regice	Ice	null
+379	160	143	285	Registeel	Steel	null
 382	182	270	251	Kyogre	Water	null
 383	182	270	251	Groudon	Ground	null
 384	191	284	170	Rayquaza	Dragon	Flying

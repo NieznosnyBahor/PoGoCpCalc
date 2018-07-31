@@ -22,14 +22,7 @@ public abstract class Database {
     // POLA:
     //
     
-    // Typy dostępne w DB
-//    enum Types {
-//        Bug, Dark, Dragon, Electric, Fairy, Fight, Fire, Flying, Ghost, 
-//        Grass, Ground, Ice, Normal, Poison, Psychic, Rock, Steel, Water
-//    }
-    
     final static int NUMBER_OF_POKEMON = loadNumberOfPokemon();
-
     static Map<Double, Double> levelMultiplier = new HashMap<Double, Double>();
     
     
@@ -52,6 +45,7 @@ public abstract class Database {
     //
 
     static void load() throws IOException {
+        
         loadLevelMultipliers();     // +
         loadRawPokemonSpec();       // +
             extractStats();         // +
