@@ -101,7 +101,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="If You have any question, advices or ideas,"/>
+            <Property name="text" type="java.lang.String" value="If You have any questions, advices or ideas,"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">

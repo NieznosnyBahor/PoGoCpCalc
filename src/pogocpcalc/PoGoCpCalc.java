@@ -13,7 +13,9 @@ import javax.swing.UIManager;
  * @author admin
  */
 public class PoGoCpCalc {
+
     static Frame frame;
+
     /**
      * @param args the command line arguments
      */
@@ -23,7 +25,7 @@ public class PoGoCpCalc {
         frame.pack();
         frame.setVisible(true);
     }
-    
+
     static void restart(String str) {
         frame.dispose();
         try {
@@ -33,9 +35,15 @@ public class PoGoCpCalc {
         }
         frame = new Frame();
 //       Frame frame = new Frame();
-       frame.pack();
-       frame.setVisible(true);
-       
+        if("HiFi".equals(UIManager.getLookAndFeel().getName()))
+        {
+            frame.setAlternativeColor();
+        }
+        System.out.println();
+        frame.pack();
+        frame.setVisible(true);
+        
+
     }
 
 }

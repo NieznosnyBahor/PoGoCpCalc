@@ -1,0 +1,120 @@
+Bug Buzz	2	3.70	90	2.00	Bug
+Megahorn	1	2.20	90	1.70	Bug
+Signal Beam	2	2.90	75	1.80	Bug
+X-Scissor	3	1.60	45	1.20	Bug
+Silver Wind	3	3.70	70	1.70	Bug
+Dark Pulse	2	3.00	80	1.40	Dark
+Night Slash	3	2.20	50	1.30	Dark
+Crunch	3	3.20	70	1.30	Dark
+Foul Play	2	2.00	70	1.70	Dark
+Dragon Claw	3	1.70	50	1.10	Dragon
+Dragon Pulse	2	3.60	90	2.15	Dragon
+Twister	3	2.80	45	0.95	Dragon
+Outrage	2	3.90	110	2.50	Dragon
+Draco Meteor	1	3.60	150	3.00	Dragon
+Discharge	3	2.50	65	1.70	Electric
+Thunder	1	2.40	100	1.20	Electric
+Thunder Punch	3	1.80	45	1.70	Electric
+Thunderbolt	2	2.50	80	1.80	Electric
+Wild Charge	2	2.60	90	1.70	Electric
+Zap Cannon	1	3.70	140	3.00	Electric
+Parabolic Charge	2	2.80	25	1.20	Electric
+Dazzling Gleam	2	3.50	100	2.10	Fairy
+Disarming Voice	3	3.90	70	3.20	Fairy
+Draining Kiss	2	2.60	60	1.00	Fairy
+Moonblast	1	3.90	130	2.20	Fairy
+Play Rough	2	2.90	90	1.30	Fairy
+Brick Break	3	1.60	40	0.80	Fight
+Cross Chop	2	1.50	50	0.80	Fight
+Low Sweep	3	1.90	40	1.30	Fight
+Submission	2	2.20	60	1.80	Fight
+Close Combat	1	2.30	100	1.00	Fight
+Dynamic Punch	2	2.70	90	1.20	Fight
+Focus Blast	1	3.50	140	3.00	Fight
+Blast Burn	2	3.30	110	2.75	Fire
+Fire Blast	1	4.20	140	3.10	Fire
+Fire Punch	3	2.20	55	1.50	Fire
+Flame Burst	2	2.60	70	1.00	Fire
+Flame Wheel	2	2.70	60	2.10	Fire
+Flamethrower	2	2.20	70	1.50	Fire
+Heat Wave	1	3.00	95	1.70	Fire
+Flame Charge	3	3.80	70	2.90	Fire
+Overheat	1	4.00	160	2.60	Fire
+Aerial Ace	3	2.40	55	1.90	Flying
+Air Cutter	2	2.70	60	1.80	Flying
+Drill Peck	3	2.30	60	1.70	Flying
+Hurricane	1	2.70	110	1.20	Flying
+Brave Bird	1	2.00	90	1.00	Flying
+Sky Attack	2	2.00	80	1.50	Flying
+Shadow Ball	2	3.00	100	2.40	Ghost
+Ominous Wind	3	2.30	50	1.85	Ghost
+Night Shade	2	2.60	60	2.10	Ghost
+Shadow Sneak	3	2.90	50	2.20	Ghost
+Shadow Punch	3	1.70	40	1.30	Ghost
+Petal Blizzard	1	2.60	110	1.70	Grass
+Power Whip	2	2.60	90	1.25	Grass
+Seed Bomb	3	2.10	55	1.20	Grass
+Solar Beam	1	4.90	180	2.70	Grass
+Leaf Blade	3	2.40	70	1.25	Grass
+Grass Knot	2	2.60	90	1.70	Grass
+Energy Ball	2	3.90	90	3.00	Grass
+Mega Drain	2	2.60	25	0.95	Grass
+Bone Club	3	1.60	40	1.00	Ground
+Bulldoze	2	3.50	80	2.60	Ground
+Dig	2	4.70	100	2.80	Ground
+Earthquake	1	3.60	120	2.70	Ground
+Mud Bomb	3	2.30	55	1.70	Ground
+Drill Run	2	2.80	80	1.70	Ground
+Sand Tomb	2	4.00	80	1.70	Ground
+Precipice Blades	1	1.70	130	1.40	Ground
+Blizzard	1	3.10	130	1.50	Ice
+Ice Beam	2	3.30	90	1.30	Ice
+Ice Punch	3	1.90	50	1.30	Ice
+Icy Wind	3	3.30	60	2.00	Ice
+Aurora Beam	2	3.55	80	3.35	Ice
+Avalanche	2	2.70	90	1.70	Ice
+Body Slam	3	1.90	50	1.20	Normal
+Horn Attack	3	1.85	40	0.80	Normal
+Hyper Beam	1	3.80	150	3.30	Normal
+Hyper Fang	2	2.50	80	1.50	Normal
+Stomp	2	1.70	55	1.10	Normal
+Struggle	3	2.20	35	1.20	Normal
+Swift	2	2.80	60	2.00	Normal
+Vice Grip	3	1.90	35	1.10	Normal
+Wrap	3	2.90	60	2.05	Normal
+Rest	3	1.90	50	1.50	Normal
+Cross Poison	3	1.50	40	0.90	Poison
+Gunk Shot	1	3.10	130	1.70	Poison
+Poison Fang	3	1.70	35	0.90	Poison
+Sludge	3	2.10	50	1.20	Poison
+Sludge Bomb	2	2.30	80	1.10	Poison
+Sludge Wave	1	3.20	110	2.00	Poison
+Psybeam	2	3.20	70	1.30	Psychic
+Psychic	1	2.80	100	1.30	Psychic
+Psyshock	3	2.70	65	2.00	Psychic
+Psystrike	2	4.40	100	3.00	Psychic
+Heart Stamp	3	1.90	40	1.10	Psychic
+Future Sight	1	2.70	120	1.40	Psychic
+Mirror Coat	2	2.60	60	2.30	Psychic
+Psycho Boost	2	4.00	70	3.50	Psychic
+Ancient Power	3	3.50	70	2.85	Rock
+Power Gem	2	2.90	80	1.95	Rock
+Rock Slide	2	2.70	80	1.50	Rock
+Rock Tomb	2	3.20	70	2.25	Rock
+Stone Edge	1	2.30	100	0.70	Rock
+Rock Blast	3	2.10	50	1.60	Rock
+Flash Cannon	1	2.70	100	1.60	Steel
+Iron Head	2	1.90	60	1.30	Steel
+Magnet Bomb	3	2.80	70	2.20	Steel
+Gyro Ball	2	3.30	80	3.00	Steel
+Heavy Slam	2	2.10	70	1.50	Steel
+Doom Desire	2	1.70	80	1.40	Steel
+Aqua Jet	3	2.60	45	1.70	Water
+Aqua Tail	3	1.90	50	1.20	Water
+Bubble Beam	3	1.90	45	1.45	Water
+Hydro Pump	1	3.30	130	0.90	Water
+Scald	2	3.70	80	1.30	Water
+Water Pulse	2	3.20	70	2.20	Water
+Brine	2	2.30	60	1.50	Water
+Surf	2	1.70	65	1.40	Water
+Origin Pulse	1	1.70	130	1.40	Water

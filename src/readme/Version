@@ -53,7 +53,7 @@ Changes:
 Version 1.05
 
 Changes:
-    - Replaced JTextField on JSpinner components on few fields
+    - Replaced JTextField on JSpinner components on many fields
     - Added automatic count NUMBER_OF_POKEMON field
     - Prepare for introduction Database and DmgCalc section
     - Added Maps for charge, fast and types of attacks  
@@ -70,5 +70,10 @@ Changes:
 
 Version 1.07
 
-
+    - Added Fast and Charge Attacks classes
+    - Added Moveset section in GUI
+    - Added types to pokemons and attacks
+    - Fixed count od number candies/pokemons needed for evolution
+    - Added functionality related with DPS
+ 
 ********************************************************************************

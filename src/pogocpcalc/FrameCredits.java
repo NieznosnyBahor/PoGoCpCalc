@@ -43,7 +43,7 @@ public class FrameCredits extends javax.swing.JFrame {
 
         jLabel3.setText("when I was creating this program :).");
 
-        jLabel4.setText("If You have any question, advices or ideas,");
+        jLabel4.setText("If You have any questions, advices or ideas,");
 
         jLabel5.setText("please e-mail me on:");
 
