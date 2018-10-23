@@ -11,6 +11,8 @@ import javax.swing.SpinnerNumberModel;
 
 /**
  *
+ * Database.AttackFastMap.keySet()
+ * Database.attackFastComboBox
  * @author admin
  */
 public class Frame extends javax.swing.JFrame {
@@ -126,8 +128,10 @@ public class Frame extends javax.swing.JFrame {
         jLabel36 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        jLabel59 = new javax.swing.JLabel();
-        jLabel60 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel64 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
         panelMoveset = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel39 = new javax.swing.JLabel();
@@ -160,6 +164,7 @@ public class Frame extends javax.swing.JFrame {
         bExit = new javax.swing.JButton();
         bCredits = new javax.swing.JButton();
         bSettings = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -868,30 +873,41 @@ public class Frame extends javax.swing.JFrame {
 
         jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel59.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel59.setText("Available moveset");
+        jLabel63.setText("Fast Attack");
 
-        jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel60.setText("In progress");
+        int idfa = combo_choose_database.getSelectedIndex();
+        String stfa[] = Database.PokemonList.get(idfa).getFaNames();
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>( stfa ));
+
+        jLabel64.setText("Charge Attack");
+
+        int idca = combo_choose_database.getSelectedIndex();
+        String stca[] = Database.PokemonList.get(idca).getCaNames();
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>( stca ));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel59, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
-                    .addComponent(jLabel60, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel64, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel63, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel59)
+                .addComponent(jLabel63)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel60)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel64)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -926,7 +942,7 @@ public class Frame extends javax.swing.JFrame {
 
         jLabel50.setText("Time");
 
-        combo_fast.setModel(new javax.swing.DefaultComboBoxModel<>( Database.attackFastComboBox));
+        combo_fast.setModel(new javax.swing.DefaultComboBoxModel<>( Database.AttackFastComboBox));
         combo_fast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 combo_fastActionPerformed(evt);
@@ -937,7 +953,7 @@ public class Frame extends javax.swing.JFrame {
 
         jLabel41.setText("0");
 
-        combo_charge.setModel(new javax.swing.DefaultComboBoxModel<>( Database.attackChargeComboBox));
+        combo_charge.setModel(new javax.swing.DefaultComboBoxModel<>( Database.AttackChargeComboBox));
         combo_charge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 combo_chargeActionPerformed(evt);
@@ -1143,12 +1159,16 @@ public class Frame extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setText("? Logs");
+
         javax.swing.GroupLayout jpBottomLayout = new javax.swing.GroupLayout(jpBottom);
         jpBottom.setLayout(jpBottomLayout);
         jpBottomLayout.setHorizontalGroup(
             jpBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBottomLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bSettings)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bCredits, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1163,7 +1183,8 @@ public class Frame extends javax.swing.JFrame {
                 .addGroup(jpBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bExit)
                     .addComponent(bCredits)
-                    .addComponent(bSettings))
+                    .addComponent(bSettings)
+                    .addComponent(jButton3))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -1249,7 +1270,7 @@ public class Frame extends javax.swing.JFrame {
         String level = spin_level.getValue().toString();
         String data[] = {tf_1_base_att.getText(), tf_1_base_def.getText(), tf_1_base_sta.getText(),
             iv_att, iv_def, iv_sta, level};
-        String answer = Database.catchData(data);
+        String answer = Database.getCPofPokemonString(data);
         Konsola.print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         Konsola.print("WYNIK CP: " + answer);
         Konsola.print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
@@ -1317,21 +1338,6 @@ public class Frame extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jLabel24MouseClicked
 
-    private void combo_choose_databaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_choose_databaseActionPerformed
-        int index = combo_choose_database.getSelectedIndex();
-        String data_pokemon[] = Database.getPokemonInfo(index);
-        jLabel32.setText(data_pokemon[1]);
-        jLabel33.setText(data_pokemon[2]);
-        jLabel34.setText(data_pokemon[0]);
-        jLabel36.setText(data_pokemon[3]);
-        if (!"null".equals(data_pokemon[4])) {
-            jLabel38.setText(data_pokemon[4]);
-        } else {
-            jLabel38.setText("");
-        }
-//        String data_attacks[] = Database.getAttacksInfo();
-    }//GEN-LAST:event_combo_choose_databaseActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 //        try {
         String arr[] = {
@@ -1376,7 +1382,7 @@ public class Frame extends javax.swing.JFrame {
         int chargeIndex = combo_charge.getSelectedIndex();
 
         double output[] = Database.calcDamagePerSecond(fastIndex, chargeIndex);
-
+        double time = Math.round(output[3] * 100.0) / 100.0;
         jLabel46.setText(Double.toString(output[0]));
         jLabel54.setText(Double.toString(output[1]));
         jLabel55.setText(Double.toString(output[2]));
@@ -1385,7 +1391,7 @@ public class Frame extends javax.swing.JFrame {
         jProgressBar1.setForeground(Color.red);
         jProgressBar1.setBackground(Color.blue);
         jProgressBar1.setValue(ratioDMG2);
-        jProgressBar1.setToolTipText("<html>" + "% of fast attack dmg in relation to total dmg" + "<br>" + ratioDMG2 + "% / " + (100 - ratioDMG2) + "%");
+        jProgressBar1.setToolTipText("<html>" + "% of fast attack dmg in relation to total dmg" + "<br>" + ratioDMG2 + "% / " + (100 - ratioDMG2) + "%" + "<br>" + "Full time: " + time);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void combo_chargeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_chargeActionPerformed
@@ -1417,6 +1423,35 @@ public class Frame extends javax.swing.JFrame {
         jLabel57.setText(Integer.toString(Database.AttackFastList.get(index).energy));
 
     }//GEN-LAST:event_combo_fastActionPerformed
+
+    private void combo_choose_databaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_choose_databaseActionPerformed
+        int index = combo_choose_database.getSelectedIndex();
+        String data_pokemon[] = Database.getPokemonInfo(index);
+        jLabel32.setText(data_pokemon[1]);
+        jLabel33.setText(data_pokemon[2]);
+        jLabel34.setText(data_pokemon[0]);
+        jLabel36.setText(data_pokemon[3]);
+        if (!"null".equals(data_pokemon[4])) {
+            jLabel38.setText(data_pokemon[4]);
+        } else {
+            jLabel38.setText("");
+        }
+        try
+        {
+            int id = combo_choose_database.getSelectedIndex();
+        String strFA[] = Database.PokemonList.get(id).getFaNames();
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>( strFA ));
+        String strCA[] = Database.PokemonList.get(id).getCaNames();
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>( strCA ));
+        repaint();
+        }
+        catch(NullPointerException exception)
+        {
+            Konsola.exception("Invalid database record.");
+            Konsola.printError("...");
+        }
+        //        String data_attacks[] = Database.getAttacksInfo();
+    }//GEN-LAST:event_combo_choose_databaseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1474,7 +1509,10 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> combo_fast;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1529,11 +1567,11 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
-    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

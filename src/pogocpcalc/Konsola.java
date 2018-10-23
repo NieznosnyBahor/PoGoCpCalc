@@ -1,5 +1,7 @@
 package pogocpcalc;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author nieznosnybahor
@@ -13,4 +15,13 @@ public abstract class Konsola {
     {
         System.out.println(s);
     }
+    static void message(String s)
+    {
+        JOptionPane.showMessageDialog(null, s);
+    }
+    static void exception(String s)
+    {
+        JOptionPane.showMessageDialog(null, "Exception: " + s);
+    }
+            
 }

@@ -33,4 +33,10 @@ public class AttackCharge {
         this.type = type;
         
     }
+
+    String getInfo() {
+        String s;
+        s = "name " + name + "\n" + "power: " + power + "\n" + "bars" + bars + "\n";
+        return s;    
+    }
 }

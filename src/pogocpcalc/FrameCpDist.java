@@ -42,7 +42,7 @@ public class FrameCpDist extends javax.swing.JFrame {
                 for (int k = c; k < 16; k++) {
                     String data[] = {arr[0], arr[1], arr[2],
                                      Integer.toString(i), Integer.toString(j), Integer.toString(k), arr[3]};
-                    String cp = Database.catchData(data);
+                    String cp = Database.getCPofPokemonString(data);
 //                    System.out.println("CP of pokemon: " + cp);
                     Double ivD = ((i + j + k) / 45.0) * 100;
                     int ivInt = ivD.intValue();

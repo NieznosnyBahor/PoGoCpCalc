@@ -32,4 +32,10 @@ public class AttackFast {
 //        this.DPS = this.power / this.time;
 //        this.EPS = this.energy / this.time;
     }
+
+    String getInfo() {
+        String s;
+        s = "name " + name + "\n" + "power: " + power + "\n" + "energy" + energy + "\n";
+        return s;
+    }
 }

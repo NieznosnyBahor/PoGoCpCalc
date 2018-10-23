@@ -1,10 +1,11 @@
-   /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package pogocpcalc;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -31,16 +32,16 @@ public abstract class Database {
     static ArrayList<Pokemon> PokemonList = new ArrayList<Pokemon>();
 
     // Dane atakow fast i charge
-//    static Map<String, Double[]> attacksFast = new HashMap<String, Double[]>();
-//    static Map<String, Double[]> attacksCharge = new HashMap<String, Double[]>();
-    //static Map<String, Types> attacksTypes = new HashMap<String, Types>();
     static ArrayList<AttackCharge> AttackChargeList = new ArrayList<AttackCharge>();
     static ArrayList<AttackFast> AttackFastList = new ArrayList<AttackFast>();
 
+    static Map<String, AttackCharge> AttackChargeMap = new HashMap<>();
+    static Map<String, AttackFast> AttackFastMap = new HashMap<>();
+
     // Nazwy przystosowane do Comboboxow
     static String pokemonNamesComboBox[] = new String[NUMBER_OF_POKEMON];
-    static String attackFastComboBox[] = new String[NUMBER_OF_FASTATTACKS];
-    static String attackChargeComboBox[] = new String[NUMBER_OF_CHARGEATTACKS];
+    static String AttackFastComboBox[] = new String[NUMBER_OF_FASTATTACKS];
+    static String AttackChargeComboBox[] = new String[NUMBER_OF_CHARGEATTACKS];
 
     //
     //
@@ -49,16 +50,18 @@ public abstract class Database {
     //
     static void load() throws IOException {
 
+        createLogSystem();
         loadLevelMultipliers();     // +
-        loadPokemonList();          // +
-//          loadPokemonNames();
-//          loadPokemonStats();
-//          loadPokemonTypes();
-//          loadPokemonAttacks();
-        loadPokemonNamesComboBox(); // +
         loadAttacksFast();          // +
         loadAttacksCharge();        // +
         loadAttacksCombobox();      // +
+        createPokemonList();        // +
+        loadPokemonNames();       // +
+        loadPokemonStats();       // +
+        loadPokemonTypes();       // +
+        loadPokemonAttacks();     // +
+        loadPokemonNamesComboBox(); // +
+        // System.out.println("\u2746");
         // show666();               // +
     }
 
@@ -89,7 +92,7 @@ public abstract class Database {
 
     private static void loadPokemonNamesComboBox() {
         for (int i = 0; i < NUMBER_OF_POKEMON; i++) {
-            pokemonNamesComboBox[i] = PokemonList.get(i).number + ". " + PokemonList.get(i).name;
+            pokemonNamesComboBox[i] = PokemonList.get(i).getNumber() + ". " + PokemonList.get(i).getName();
         }
     }
     // <editor-fold defaultstate="collapsed" desc=" ${Wykomentowane} ">
@@ -152,7 +155,7 @@ public abstract class Database {
         }
     }
 
-    static String catchData(String[] data) {
+    static String getCPofPokemonString(String[] data) {
 
         double coe_att = Integer.parseInt(data[0]) + Integer.parseInt(data[3]);
         double coe_def = Math.sqrt(Integer.parseInt(data[1]) + Integer.parseInt(data[4]));
@@ -165,12 +168,25 @@ public abstract class Database {
         }
         return Integer.toString(wynikInt);
     }
+    static int getCPofPokemonInt(String[] data){
+        
+        double coe_att = Integer.parseInt(data[0]) + Integer.parseInt(data[3]);
+        double coe_def = Math.sqrt(Integer.parseInt(data[1]) + Integer.parseInt(data[4]));
+        double coe_sta = Math.sqrt(Integer.parseInt(data[2]) + Integer.parseInt(data[5]));
+        double coe_lvl = Math.pow(levelMultiplier.get(Double.parseDouble(data[6])), 2);
+        double wynik = ((coe_att * coe_def * coe_sta) / 10) * coe_lvl;
+        int wynikInt = (int) wynik;
+        if (wynikInt < 10) {
+            wynikInt = 10;
+        }
+        return wynikInt;
+    }
 
     // Panel Konwersji statystyk
     static String[] convertStats(int hp, int att, int spatt, int def, int spdef, int speed) {
         double speedCoeff = 1.0 + ((speed - 75) * 0.002);
         double go_sta;
-        go_sta = hp * 2;
+        go_sta = (hp * 1.75) + 50;
         //
         double go_att;
         int up, down;
@@ -198,7 +214,7 @@ public abstract class Database {
             up = spdef;
             down = def;
         }
-        go_def = ((up * 0.875) + (down * 0.125)) * 2;
+        go_def = ((up * 0.625) + (down * 0.375)) * 2;
         go_def = Math.round(go_def);
         go_def *= speedCoeff;
         go_def = Math.round(go_def);
@@ -216,9 +232,9 @@ public abstract class Database {
         int cost = Integer.parseInt(Cost);
         int candies = Integer.parseInt(Candies);
         if (transfer) {
-            return (int) Math.ceil((candies-2) / (cost - 2));
+            return (int) Math.ceil((candies - 2) / (cost - 2));
         } else {
-            return (int) Math.ceil((candies-1) / (cost - 1));
+            return (int) Math.ceil((candies - 1) / (cost - 1));
         }
     }
 
@@ -234,18 +250,18 @@ public abstract class Database {
 
     static String[] getPokemonInfo(int index) {
         String data[] = new String[5];     // sta/att/def / type1 / type2
-        data[0] = Integer.toString(PokemonList.get(index).stat_sta);
-        data[1] = Integer.toString(PokemonList.get(index).stat_att);
-        data[2] = Integer.toString(PokemonList.get(index).stat_def);
+        data[0] = Integer.toString(PokemonList.get(index).getStat_sta());
+        data[1] = Integer.toString(PokemonList.get(index).getStat_att());
+        data[2] = Integer.toString(PokemonList.get(index).getStat_def());
 
         try {
-            data[3] = PokemonList.get(index).type1.toString();
+            data[3] = PokemonList.get(index).getType1().toString();
         } catch (Exception e) {
             data[3] = "null";
         }
 
         try {
-            data[4] = PokemonList.get(index).type2.toString();
+            data[4] = PokemonList.get(index).getType2().toString();
         } catch (Exception e) {
             data[4] = "null";
         }
@@ -257,28 +273,31 @@ public abstract class Database {
         return null;
     }
 
-    private static void loadPokemonList() {
+    private static void createPokemonList() {
 
-        InputStream stream = Database.class.getResourceAsStream("/database/Pokemon_Stats");
-        Scanner sc = new Scanner(stream);
-        int i = 0;
-
-        while (sc.hasNext()) {
-            String line = sc.nextLine();
-            String parts[] = line.split("\t");
-
-            int id = i;
-            int number = Integer.parseInt(parts[0]);
-            String name = parts[4];
-            int stat_att = Integer.parseInt(parts[2]);
-            int stat_def = Integer.parseInt(parts[3]);
-            int stat_sta = Integer.parseInt(parts[1]);
-            EnumTypes type1 = chooseType(parts[5]);
-            EnumTypes type2 = chooseType(parts[6]);
-            PokemonList.add(new Pokemon(id, number, name, stat_att, stat_def, stat_sta, type1, type2));
-            i++;
+        for (int a = 0; a < NUMBER_OF_POKEMON; a++) {
+            PokemonList.add(new Pokemon(a));
         }
 
+//        InputStream stream = Database.class.getResourceAsStream("/database/Pokemon_Stats");
+//        Scanner sc = new Scanner(stream);
+//        int i = 0;
+//
+//        while (sc.hasNext()) {
+//            String line = sc.nextLine();
+//            String parts[] = line.split("\t");
+//
+//            int id = i;
+//            int number = Integer.parseInt(parts[0]);
+//            String name = parts[4];
+//            int stat_att = Integer.parseInt(parts[2]);
+//            int stat_def = Integer.parseInt(parts[3]);
+//            int stat_sta = Integer.parseInt(parts[1]);
+//            EnumTypes type1 = chooseType(parts[5]);
+//            EnumTypes type2 = chooseType(parts[6]);
+//            PokemonList.add(new Pokemon(id, number, name, stat_att, stat_def, stat_sta, type1, type2));
+//            i++;
+//        }
     }
 
     private static EnumTypes chooseType(String part) {
@@ -340,7 +359,7 @@ public abstract class Database {
             EnumTypes type = chooseType(parts[4]);
 
             AttackFastList.add(new AttackFast(name, damage, time, energy, type));
-
+            AttackFastMap.put(name, new AttackFast(name, damage, time, energy, type));
         }
 
         stream.close();
@@ -363,7 +382,7 @@ public abstract class Database {
             EnumTypes type = chooseType(parts[5]);
 
             AttackChargeList.add(new AttackCharge(name, damage, time, active, bars, type));
-
+            AttackChargeMap.put(name, new AttackCharge(name, damage, time, active, bars, type));
         }
         stream.close();
         sc.close();
@@ -372,10 +391,10 @@ public abstract class Database {
 
     private static void loadAttacksCombobox() {
         for (int i = 0; i < AttackFastList.size(); i++) {
-            attackFastComboBox[i] = "(" + AttackFastList.get(i).type + ") " + AttackFastList.get(i).name;
+            AttackFastComboBox[i] = "(" + AttackFastList.get(i).type + ") " + AttackFastList.get(i).name;
         }
         for (int i = 0; i < AttackChargeList.size(); i++) {
-            attackChargeComboBox[i] = "(" + AttackChargeList.get(i).type + ") " + AttackChargeList.get(i).name;
+            AttackChargeComboBox[i] = "(" + AttackChargeList.get(i).type + ") " + AttackChargeList.get(i).name;
         }
     }
 
@@ -405,7 +424,8 @@ public abstract class Database {
 
     private static void show666() {
 
-        for (int i = 0; i < 152; i++) {          // pokemon
+        //System.out.println("Nr\tName\tatt/def/sta/level");
+        for (int i = 0; i < NUMBER_OF_POKEMON; i++) {          // pokemon
             for (int j = 6; j < 7; j++) {      // ivatt
                 for (int k = 6; k < 7; k++) {  // ivdef
                     for (int l = 6; l < 7; l++) { // ivsta
@@ -413,16 +433,15 @@ public abstract class Database {
 
                             // att, obr, sta ivatt, ivobr, ivsta, lvl
                             String[] data = {
-                                Integer.toString(PokemonList.get(i).stat_att),
-                                Integer.toString(PokemonList.get(i).stat_def),
-                                Integer.toString(PokemonList.get(i).stat_sta),
+                                Integer.toString(PokemonList.get(i).getStat_att()),
+                                Integer.toString(PokemonList.get(i).getStat_def()),
+                                Integer.toString(PokemonList.get(i).getStat_sta()),
                                 Integer.toString(j),
                                 Integer.toString(k),
                                 Integer.toString(l),
                                 Double.toString(m)};
-
-                            if ("666".equals(catchData(data))) {
-                                System.out.println(PokemonList.get(i).number + " " + PokemonList.get(i).name + " " + j + "/" + k + "/" + l + "/L" + m);
+                            if ("666".equals(getCPofPokemonString(data))) {
+                                System.out.println(PokemonList.get(i).getNumber() + " " + PokemonList.get(i).getName() + " " + j + "/" + k + "/" + l + " L" + m + ": cp666");
                             }
                         }
                     }
@@ -468,24 +487,84 @@ public abstract class Database {
         dps = Math.round(dps * 100.0) / 100.0;
         dpsFA = Math.round(dpsFA * 100.0) / 100.0;
         dpsCA = Math.round(dpsCA * 100.0) / 100.0;
-        double[] output = {dps, dpsFA, dpsCA};
+        double[] output = {dps, dpsFA, dpsCA, moveset_full_time};
         return output;
     }
 
-    private static void loadPokemonAttacks(){
-        
+    private static void loadPokemonAttacks() {
         InputStream stream = Database.class.getResourceAsStream("/database/Pokemon_Attacks");
         Scanner sc = new Scanner(stream);
+        int numberOfLine = 0;
         while (sc.hasNextLine()) {
             String parts[] = sc.nextLine().split("\t"); // 0-number 1-fa[] 2-ca[]
+
+            String partsA[] = parts[1].split(",");
+            AttackFast[] fa = new AttackFast[partsA.length];
+            for (int a = 0; a < partsA.length; a++) {
+                fa[a] = AttackFastMap.get(partsA[a]);
+//                System.out.println(AttackFastMap.get(partsA[a]));
+            }
+
+            String partsB[] = parts[2].split(",");
+            AttackCharge[] ca = new AttackCharge[partsB.length];
+            for (int a = 0; a < partsB.length; a++) {
+//                System.out.println(AttackChargeMap.get(partsB[a]).name);
+                ca[a] = AttackChargeMap.get(partsB[a]);
+            }
+            PokemonList.get(numberOfLine).setFa(fa);
+            PokemonList.get(numberOfLine).setCa(ca);
+            numberOfLine++;
         }
-    } 
+        sc.close();
+
+    }
 
     private static void loadPokemonTypes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        InputStream stream = Database.class.getResourceAsStream("/database/Pokemon_Types");
+        Scanner sc = new Scanner(stream);
+        int numberOfLine = 0;
+        while (sc.hasNextLine()) {
+            String parts[] = sc.nextLine().split("\t"); // 0-number 1-type1 2-type2
+            PokemonList.get(numberOfLine).setType1(chooseType(parts[1]));
+            PokemonList.get(numberOfLine).setType2(chooseType(parts[2]));
+            numberOfLine++;
+        }
+        sc.close();
     }
 
     private static void loadPokemonStats() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        InputStream stream = Database.class.getResourceAsStream("/database/Pokemon_Stats");
+        Scanner sc = new Scanner(stream);
+        int numberOfLine = 0;
+        while (sc.hasNextLine()) {
+            String parts[] = sc.nextLine().split("\t"); // 0-number 1-hp 2-att 3-def
+            PokemonList.get(numberOfLine).setNumber(Integer.parseInt(parts[0]));
+            PokemonList.get(numberOfLine).setStat_sta(Integer.parseInt(parts[1]));
+            PokemonList.get(numberOfLine).setStat_att(Integer.parseInt(parts[2]));
+            PokemonList.get(numberOfLine).setStat_def(Integer.parseInt(parts[3]));
+            numberOfLine++;
+        }
+        sc.close();
+    }
+
+    private static void loadPokemonNames() {
+        InputStream stream = Database.class.getResourceAsStream("/database/Pokemon_Names");
+        Scanner sc = new Scanner(stream);
+        int numberOfLine = 0;
+        while (sc.hasNextLine()) {
+            String parts[] = sc.nextLine().split("\t"); // 0-number 1-name
+            PokemonList.get(numberOfLine).setName(parts[1]);
+            numberOfLine++;
+        }
+        sc.close();
+    }
+
+    private static void createLogSystem() {
+        try {
+            Logs.loadRecordSystem();
+        } catch (FileNotFoundException e) {
+            System.out.println("XDD");
+        }
+        
     }
 }

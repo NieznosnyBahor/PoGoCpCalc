@@ -11,3 +11,4 @@ NAJWAZNIEJSZE
 ROZWÓJ!!!ONE!ONE!!
 W bazie danych utworzyc kolekcje statystyk danych obrazkow, atakow innych pierdol o pokemonie
 
+combo_fast.setModel(new javax.swing.DefaultComboBoxModel<>( Database.AttackFastMap.keySet().toArray(new String[Database.AttackFastMap.keySet().size()])));
