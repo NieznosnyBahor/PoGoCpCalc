@@ -21,9 +21,15 @@ public class PoGoCpCalc {
      */
     public static void main(String[] args) throws IOException {
         Database.load();
-        frame = new Frame();
-        frame.pack();
-        frame.setVisible(true);
+        try {
+            
+            UIManager.setLookAndFeel("com.jtattoo.plaf.hifi.HiFiLookAndFeel");
+            frame = new Frame();
+            frame.pack();
+            frame.setVisible(true);
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
     }
 
     static void restart(String str) {
@@ -31,18 +37,16 @@ public class PoGoCpCalc {
         try {
             UIManager.setLookAndFeel(str);
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.toString());
         }
         frame = new Frame();
 //       Frame frame = new Frame();
-        if("HiFi".equals(UIManager.getLookAndFeel().getName()))
-        {
+        if ("HiFi".equals(UIManager.getLookAndFeel().getName())) {
             frame.setAlternativeColor();
         }
         System.out.println();
         frame.pack();
         frame.setVisible(true);
-        
 
     }
 

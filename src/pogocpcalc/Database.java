@@ -63,6 +63,7 @@ public abstract class Database {
         loadPokemonNamesComboBox(); // +
         // System.out.println("\u2746");
         // show666();               // +
+        // show1000();               // +
     }
 
     private static int loadNumberOfPokemon() {
@@ -168,8 +169,9 @@ public abstract class Database {
         }
         return Integer.toString(wynikInt);
     }
-    static int getCPofPokemonInt(String[] data){
-        
+
+    static int getCPofPokemonInt(String[] data) {
+
         double coe_att = Integer.parseInt(data[0]) + Integer.parseInt(data[3]);
         double coe_def = Math.sqrt(Integer.parseInt(data[1]) + Integer.parseInt(data[4]));
         double coe_sta = Math.sqrt(Integer.parseInt(data[2]) + Integer.parseInt(data[5]));
@@ -425,6 +427,7 @@ public abstract class Database {
     private static void show666() {
 
         //System.out.println("Nr\tName\tatt/def/sta/level");
+        int number = 0;
         for (int i = 0; i < NUMBER_OF_POKEMON; i++) {          // pokemon
             for (int j = 6; j < 7; j++) {      // ivatt
                 for (int k = 6; k < 7; k++) {  // ivdef
@@ -441,7 +444,8 @@ public abstract class Database {
                                 Integer.toString(l),
                                 Double.toString(m)};
                             if ("666".equals(getCPofPokemonString(data))) {
-                                System.out.println(PokemonList.get(i).getNumber() + " " + PokemonList.get(i).getName() + " " + j + "/" + k + "/" + l + " L" + m + ": cp666");
+                                number++;
+                                System.out.println(number + ". #" + PokemonList.get(i).getNumber() + " " + PokemonList.get(i).getName() + " " + j + "/" + k + "/" + l + " L" + m + ": cp666");
                             }
                         }
                     }
@@ -451,6 +455,37 @@ public abstract class Database {
         }
     }
 
+    private static void show1000() {
+
+        //System.out.println("Nr\tName\tatt/def/sta/level");
+        int number = 0;
+        for (int i = 0; i < NUMBER_OF_POKEMON; i++) {          // pokemon
+            for (int j = 10; j < 11; j++) {      // ivatt
+                for (int k = 10; k < 11; k++) {  // ivdef
+                    for (int l = 10; l < 11; l++) { // ivsta
+                        for (double m = 1; m < 40.5; m += 0.5) {
+
+                            // att, obr, sta ivatt, ivobr, ivsta, lvl
+                            String[] data = {
+                                Integer.toString(PokemonList.get(i).getStat_att()),
+                                Integer.toString(PokemonList.get(i).getStat_def()),
+                                Integer.toString(PokemonList.get(i).getStat_sta()),
+                                Integer.toString(j),
+                                Integer.toString(k),
+                                Integer.toString(l),
+                                Double.toString(m)};
+                            if ("1000".equals(getCPofPokemonString(data))) {
+                                number++;
+                                System.out.println(number + ". #" + PokemonList.get(i).getNumber() + " " + PokemonList.get(i).getName() + " " + j + "/" + k + "/" + l + " L" + m + ": cp1000");
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+    
     static double[] calcDamagePerSecond(int indexFast, int indexCharge) {
         int fast_dmg = AttackFastList.get(indexFast).power;
         int fast_nrg = AttackFastList.get(indexFast).energy;
@@ -489,6 +524,37 @@ public abstract class Database {
         dpsCA = Math.round(dpsCA * 100.0) / 100.0;
         double[] output = {dps, dpsFA, dpsCA, moveset_full_time};
         return output;
+    }
+
+    static double calcDamagePerSecond(AttackFast fast, AttackCharge charge, double pokemonInfo[]) { // info: att/def/sta// ivatt/def/sta // lvl
+        if (fast.energy == 0) {
+            return 0.0;
+        }
+
+        int dmg_fast = ((int) (0.5 * fast.power * ((pokemonInfo[0] + pokemonInfo[3]) / (100 + 0))
+                * levelMultiplier.get(pokemonInfo[6]) / levelMultiplier.get(40.0))) + 1;
+//        System.out.println("dmg_fast: " + dmg_fast);
+        int dmg_charge = ((int) (0.5 * charge.power * ((pokemonInfo[0] + pokemonInfo[3]) / (100 + 0))
+                * levelMultiplier.get(pokemonInfo[6]) / levelMultiplier.get(40.0))) + 1;
+//        System.out.println("dmg_charge: " + dmg_charge);
+        double time_to_get_full_energy;
+        double dmg_dealed_with_FA;
+        try {
+
+            time_to_get_full_energy = Math.ceil(100 / fast.energy) * fast.time;
+            dmg_dealed_with_FA = Math.ceil(100 / fast.energy) * dmg_fast;
+
+        } catch (Exception e) {
+            time_to_get_full_energy = 0.0;
+            dmg_dealed_with_FA = 0.0;
+        }
+
+        double moveset_full_time = time_to_get_full_energy + charge.bars * charge.time;
+        double moveset_full_damage = dmg_dealed_with_FA + charge.bars * dmg_charge;
+
+        double dps = moveset_full_damage / moveset_full_time;
+        dps = Math.round(dps * 100.0) / 100.0;
+        return dps;
     }
 
     private static void loadPokemonAttacks() {
@@ -565,6 +631,22 @@ public abstract class Database {
         } catch (FileNotFoundException e) {
             System.out.println("XDD");
         }
-        
+
+    }
+
+    static AttackFast stringToFastAttack (String fast) {
+        for (int i = 0; i < AttackFastList.size(); i++) {
+            if(fast.equals(AttackFastList.get(i).name))
+                return AttackFastList.get(i);
+        }
+        return null;
+    }
+
+    static AttackCharge stringToChargeAttack(String charge) {
+        for (int i = 0; i < AttackChargeList.size(); i++) {
+            if(charge.equals(AttackChargeList.get(i).name))
+                return AttackChargeList.get(i);
+        }
+        return null;
     }
 }
