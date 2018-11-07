@@ -6,6 +6,9 @@
 package pogocpcalc;
 
 import java.awt.Color;
+import java.awt.MouseInfo;
+import java.awt.Point;
+import java.awt.PointerInfo;
 import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 import javax.swing.SpinnerNumberModel;
@@ -17,10 +20,11 @@ import javax.swing.SpinnerNumberModel;
  * @author admin
  */
 public class Frame extends javax.swing.JFrame {
-    
+
     Pokemon currentPokemon;
     AttackFast currentAttackFast;
     AttackCharge currentAttackCharge;
+
     /**
      * Creates new form Frame
      */
@@ -1113,6 +1117,11 @@ public class Frame extends javax.swing.JFrame {
 
         jButton9.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         jButton9.setText("X");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -1882,25 +1891,32 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_combo_fastActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        FrameAttackSelector fr = new FrameAttackSelector();
+        FrameAttackSelector fr = new FrameAttackSelector("fast");
+        fr.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        PointerInfo pi = MouseInfo.getPointerInfo();
+        int x, y;
+        Point p = pi.getLocation();
+        x = p.x;
+        y = p.y;
+        fr.setLocation(x - 50, y - 50);
+        
+        
         fr.setVisible(true);
 
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        
-//        getPokemon();
-//        if()
-//        try{
-//            combo_choose_cp.setSelectedIndex(currentPokemon.id);
-//        }
-//        catch(Exception e)
-//        {
-//            System.out.println("Canceled");
-//        }
-        
-        
-        
+
+        FramePokemonSelector fps = new FramePokemonSelector();
+        fps.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        PointerInfo pi = MouseInfo.getPointerInfo();
+        int x, y;
+        Point p = pi.getLocation();
+        x = p.x;
+        y = p.y;
+        fps.setLocation(x - 50, y - 50);
+        fps.setVisible(true);
+
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MousePressed
@@ -1909,8 +1925,30 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5MousePressed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
+        FramePokemonSelector fps = new FramePokemonSelector();
+        fps.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        PointerInfo pi = MouseInfo.getPointerInfo();
+        int x, y;
+        Point p = pi.getLocation();
+        x = p.x;
+        y = p.y;
+        fps.setLocation(x - 50, y - 50);
+        fps.setVisible(true);
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        FrameAttackSelector fr = new FrameAttackSelector("charge");
+        fr.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        PointerInfo pi = MouseInfo.getPointerInfo();
+        int x, y;
+        Point p = pi.getLocation();
+        x = p.x;
+        y = p.y;
+        fr.setLocation(x - 50, y - 50);
+        
+        
+        fr.setVisible(true);
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1963,8 +2001,8 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JButton b_egg_raid;
     private javax.swing.JCheckBox cb_transfer;
     protected javax.swing.JComboBox<String> combo_charge;
-    private javax.swing.JComboBox<String> combo_choose_cp;
-    private javax.swing.JComboBox<String> combo_choose_database;
+    protected javax.swing.JComboBox<String> combo_choose_cp;
+    protected javax.swing.JComboBox<String> combo_choose_database;
     protected javax.swing.JComboBox<String> combo_fast;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
@@ -2121,12 +2159,12 @@ public class Frame extends javax.swing.JFrame {
     }
 
     private void getPokemon() {
-        
+
         FramePokemonSelector fps = new FramePokemonSelector();
         fps.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         fps.setVisible(true);
         combo_choose_cp.setSelectedIndex(currentPokemon.id);
-        
-     }
+
+    }
 
 }

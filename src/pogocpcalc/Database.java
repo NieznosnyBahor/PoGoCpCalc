@@ -10,8 +10,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 import static pogocpcalc.Database.levelMultiplier;
 
 /**
@@ -485,7 +487,7 @@ public abstract class Database {
 
         }
     }
-    
+
     static double[] calcDamagePerSecond(int indexFast, int indexCharge) {
         int fast_dmg = AttackFastList.get(indexFast).power;
         int fast_nrg = AttackFastList.get(indexFast).energy;
@@ -634,19 +636,114 @@ public abstract class Database {
 
     }
 
-    static AttackFast stringToFastAttack (String fast) {
+    static AttackFast stringToFastAttack(String fast) {
         for (int i = 0; i < AttackFastList.size(); i++) {
-            if(fast.equals(AttackFastList.get(i).name))
+            if (fast.equals(AttackFastList.get(i).name)) {
                 return AttackFastList.get(i);
+            }
         }
         return null;
     }
 
     static AttackCharge stringToChargeAttack(String charge) {
         for (int i = 0; i < AttackChargeList.size(); i++) {
-            if(charge.equals(AttackChargeList.get(i).name))
+            if (charge.equals(AttackChargeList.get(i).name)) {
                 return AttackChargeList.get(i);
+            }
         }
         return null;
     }
+
+    static Pokemon stringToPokemon(String pokemon) {
+        for (int i = 0; i < PokemonList.size(); i++) {
+            if (pokemon.equals(PokemonList.get(i).getName())) {
+                return PokemonList.get(i);
+            }
+        }
+        return null;
+    }
+
+
+    static ArrayList<Pokemon> getViewSelectedPokemon(boolean[] state, String text) {
+
+        ArrayList<Pokemon> pkmn = new ArrayList<Pokemon>();
+
+        for (int i = 0; i < PokemonList.size(); i++) {
+           
+            for (EnumTypes type : EnumTypes.values()) {
+
+                if(text.isEmpty()) // Tylko typy
+                {
+                    if (       
+                          (
+                             ((PokemonList.get(i).getType1() == type) && state[type.getNumber(type)] == true) 
+                              ||
+                             ((PokemonList.get(i).getType2() == type) && state[type.getNumber(type)] == true) 
+                          )
+                       )
+                    {
+                        pkmn.add(PokemonList.get(i));
+                    }
+                    
+                }
+                else if(!text.isEmpty())
+                {
+                    if(     // Nazwa + typy
+                            (PokemonList.get(i).getName().contains(text))
+                            &&
+                            (
+                                ((PokemonList.get(i).getType1() == type) && state[type.getNumber(type)] == true) 
+                                    ||
+                                ((PokemonList.get(i).getType2() == type) && state[type.getNumber(type)] == true)
+                            ) 
+                       )
+                    {
+                        pkmn.add(PokemonList.get(i));
+                    }
+                    else if(allStatesDown(state))       // Tylko nazwa
+                    {
+                        if(PokemonList.get(i).getName().contains(text))
+                        {
+                            pkmn.add(PokemonList.get(i));
+                        }
+                    }
+                }
+            }
+        }
+        Set<Pokemon> set = new LinkedHashSet<>();
+        set.addAll(pkmn);
+        pkmn.clear();
+        pkmn.addAll(set);
+
+//        if (!text.isEmpty()) {
+//            for (int i = 0; i < pkmn.size(); i++) { // dla każdego pokemona w tej liście
+//                String name = pkmn.get(i).getName().toLowerCase();
+//                text = text.toLowerCase();
+//                
+//                if(!name.startsWith(text))
+//                {
+//                    pkmn.remove(i);
+//                }
+//            }
+//        }
+
+        
+        
+        return pkmn;
+    }
+
+    private static boolean allStatesDown(boolean[] state) {
+        for (int i = 0; i < state.length; i++) 
+        {
+            if(state[i] == true)
+            {
+                return false;
+            }
+            
+        }
+        return true;
+    }
+
+    
+
 }

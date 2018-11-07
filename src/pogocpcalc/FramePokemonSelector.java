@@ -5,6 +5,9 @@
  */
 package pogocpcalc;
 
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author admin
@@ -28,27 +31,27 @@ public class FramePokemonSelector extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jToggleButton6 = new javax.swing.JToggleButton();
-        jToggleButton9 = new javax.swing.JToggleButton();
-        jToggleButton10 = new javax.swing.JToggleButton();
-        jToggleButton11 = new javax.swing.JToggleButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton18 = new javax.swing.JToggleButton();
-        jToggleButton17 = new javax.swing.JToggleButton();
-        jToggleButton16 = new javax.swing.JToggleButton();
-        jToggleButton7 = new javax.swing.JToggleButton();
-        jToggleButton15 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton12 = new javax.swing.JToggleButton();
-        jToggleButton8 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton14 = new javax.swing.JToggleButton();
-        jToggleButton13 = new javax.swing.JToggleButton();
+        jtDragon = new javax.swing.JToggleButton();
+        jtDark = new javax.swing.JToggleButton();
+        jtBug = new javax.swing.JToggleButton();
+        jtElectric = new javax.swing.JToggleButton();
+        jtNormal = new javax.swing.JToggleButton();
+        jtPoison = new javax.swing.JToggleButton();
+        jtPsychic = new javax.swing.JToggleButton();
+        jtRock = new javax.swing.JToggleButton();
+        jtSteel = new javax.swing.JToggleButton();
+        jtWater = new javax.swing.JToggleButton();
+        jtFairy = new javax.swing.JToggleButton();
+        jtFight = new javax.swing.JToggleButton();
+        jtFire = new javax.swing.JToggleButton();
+        jtFly = new javax.swing.JToggleButton();
+        jtGhost = new javax.swing.JToggleButton();
+        jtGrass = new javax.swing.JToggleButton();
+        jtGround = new javax.swing.JToggleButton();
+        jtIce = new javax.swing.JToggleButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jList1 = new javax.swing.JList<>(model);
         jPanel3 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -58,160 +61,241 @@ public class FramePokemonSelector extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jToggleButton6.setBackground(new java.awt.Color(112, 56, 248));
-        jToggleButton6.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jToggleButton6.setText("Dragn");
-
-        jToggleButton9.setBackground(new java.awt.Color(112, 88, 72));
-        jToggleButton9.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jToggleButton9.setText("Dark");
-
-        jToggleButton10.setBackground(new java.awt.Color(168, 184, 32));
-        jToggleButton10.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jToggleButton10.setText("Bug");
-
-        jToggleButton11.setBackground(new java.awt.Color(248, 208, 48));
-        jToggleButton11.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jToggleButton11.setText("Elect");
-
-        jToggleButton1.setBackground(new java.awt.Color(168, 168, 120));
-        jToggleButton1.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jToggleButton1.setText("Norml");
-
-        jToggleButton18.setBackground(new java.awt.Color(160, 64, 160));
-        jToggleButton18.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jToggleButton18.setText("Poisn");
-
-        jToggleButton17.setBackground(new java.awt.Color(248, 88, 136));
-        jToggleButton17.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jToggleButton17.setText("Psych");
-
-        jToggleButton16.setBackground(new java.awt.Color(184, 160, 56));
-        jToggleButton16.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jToggleButton16.setText("Rock");
-
-        jToggleButton7.setBackground(new java.awt.Color(184, 184, 208));
-        jToggleButton7.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jToggleButton7.setText("Steel");
-
-        jToggleButton15.setBackground(new java.awt.Color(104, 144, 240));
-        jToggleButton15.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jToggleButton15.setText("Water");
-        jToggleButton15.addActionListener(new java.awt.event.ActionListener() {
+        jtDragon.setBackground(new java.awt.Color(112, 56, 248));
+        jtDragon.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jtDragon.setText("Dragn");
+        jtDragon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton15ActionPerformed(evt);
+                jtDragonActionPerformed(evt);
             }
         });
 
-        jToggleButton4.setBackground(new java.awt.Color(238, 153, 172));
-        jToggleButton4.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jToggleButton4.setText("Fairy");
+        jtDark.setBackground(new java.awt.Color(112, 88, 72));
+        jtDark.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jtDark.setText("Dark");
+        jtDark.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtDarkActionPerformed(evt);
+            }
+        });
 
-        jToggleButton5.setBackground(new java.awt.Color(192, 48, 40));
-        jToggleButton5.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jToggleButton5.setText("Fight");
+        jtBug.setBackground(new java.awt.Color(168, 184, 32));
+        jtBug.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jtBug.setText("Bug");
+        jtBug.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtBugActionPerformed(evt);
+            }
+        });
 
-        jToggleButton2.setBackground(new java.awt.Color(240, 128, 48));
-        jToggleButton2.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jToggleButton2.setText("Fire");
+        jtElectric.setBackground(new java.awt.Color(248, 208, 48));
+        jtElectric.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jtElectric.setText("Elect");
+        jtElectric.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtElectricActionPerformed(evt);
+            }
+        });
 
-        jToggleButton12.setBackground(new java.awt.Color(168, 144, 240));
-        jToggleButton12.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jToggleButton12.setText("Fly");
+        jtNormal.setBackground(new java.awt.Color(168, 168, 120));
+        jtNormal.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jtNormal.setText("Norml");
+        jtNormal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtNormalActionPerformed(evt);
+            }
+        });
 
-        jToggleButton8.setBackground(new java.awt.Color(112, 88, 152));
-        jToggleButton8.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jToggleButton8.setText("Ghost");
+        jtPoison.setBackground(new java.awt.Color(160, 64, 160));
+        jtPoison.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jtPoison.setText("Poisn");
+        jtPoison.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtPoisonActionPerformed(evt);
+            }
+        });
 
-        jToggleButton3.setBackground(new java.awt.Color(120, 200, 80));
-        jToggleButton3.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jToggleButton3.setText("Grass");
+        jtPsychic.setBackground(new java.awt.Color(248, 88, 136));
+        jtPsychic.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jtPsychic.setText("Psych");
+        jtPsychic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtPsychicActionPerformed(evt);
+            }
+        });
 
-        jToggleButton14.setBackground(new java.awt.Color(224, 192, 104));
-        jToggleButton14.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jToggleButton14.setText("Groud");
+        jtRock.setBackground(new java.awt.Color(184, 160, 56));
+        jtRock.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jtRock.setText("Rock");
+        jtRock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtRockActionPerformed(evt);
+            }
+        });
 
-        jToggleButton13.setBackground(new java.awt.Color(152, 216, 216));
-        jToggleButton13.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jToggleButton13.setText("Ice");
+        jtSteel.setBackground(new java.awt.Color(184, 184, 208));
+        jtSteel.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jtSteel.setText("Steel");
+        jtSteel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtSteelActionPerformed(evt);
+            }
+        });
+
+        jtWater.setBackground(new java.awt.Color(104, 144, 240));
+        jtWater.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jtWater.setText("Water");
+        jtWater.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtWaterActionPerformed(evt);
+            }
+        });
+
+        jtFairy.setBackground(new java.awt.Color(238, 153, 172));
+        jtFairy.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jtFairy.setText("Fairy");
+        jtFairy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtFairyActionPerformed(evt);
+            }
+        });
+
+        jtFight.setBackground(new java.awt.Color(192, 48, 40));
+        jtFight.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jtFight.setText("Fight");
+        jtFight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtFightActionPerformed(evt);
+            }
+        });
+
+        jtFire.setBackground(new java.awt.Color(240, 128, 48));
+        jtFire.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jtFire.setText("Fire");
+        jtFire.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtFireActionPerformed(evt);
+            }
+        });
+
+        jtFly.setBackground(new java.awt.Color(168, 144, 240));
+        jtFly.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jtFly.setText("Fly");
+        jtFly.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtFlyActionPerformed(evt);
+            }
+        });
+
+        jtGhost.setBackground(new java.awt.Color(112, 88, 152));
+        jtGhost.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jtGhost.setText("Ghost");
+        jtGhost.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtGhostActionPerformed(evt);
+            }
+        });
+
+        jtGrass.setBackground(new java.awt.Color(120, 200, 80));
+        jtGrass.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jtGrass.setText("Grass");
+        jtGrass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtGrassActionPerformed(evt);
+            }
+        });
+
+        jtGround.setBackground(new java.awt.Color(224, 192, 104));
+        jtGround.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jtGround.setText("Groun");
+        jtGround.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtGroundActionPerformed(evt);
+            }
+        });
+
+        jtIce.setBackground(new java.awt.Color(152, 216, 216));
+        jtIce.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jtIce.setText("Ice");
+        jtIce.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtIceActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jToggleButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtBug, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtDark, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtDragon, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtElectric, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtFairy, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jtFight, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtNormal, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtPoison, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtPsychic, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtRock, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtSteel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jtWater, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtFire, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtFly, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtGhost, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtGrass, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtGround, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jtIce, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton10)
-                    .addComponent(jToggleButton6)
-                    .addComponent(jToggleButton9)
-                    .addComponent(jToggleButton11)
-                    .addComponent(jToggleButton4)
-                    .addComponent(jToggleButton5))
+                    .addComponent(jtBug)
+                    .addComponent(jtDragon)
+                    .addComponent(jtDark)
+                    .addComponent(jtElectric)
+                    .addComponent(jtFairy)
+                    .addComponent(jtFight))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jToggleButton12)
-                        .addComponent(jToggleButton8)
-                        .addComponent(jToggleButton3)
-                        .addComponent(jToggleButton14)
-                        .addComponent(jToggleButton13))
-                    .addComponent(jToggleButton2))
+                        .addComponent(jtFly)
+                        .addComponent(jtGhost)
+                        .addComponent(jtGrass)
+                        .addComponent(jtGround)
+                        .addComponent(jtIce))
+                    .addComponent(jtFire))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton1)
-                    .addComponent(jToggleButton17)
-                    .addComponent(jToggleButton18)
-                    .addComponent(jToggleButton16)
-                    .addComponent(jToggleButton7)
-                    .addComponent(jToggleButton15)))
+                    .addComponent(jtNormal)
+                    .addComponent(jtPsychic)
+                    .addComponent(jtPoison)
+                    .addComponent(jtRock)
+                    .addComponent(jtSteel)
+                    .addComponent(jtWater)))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Abra", "Kadabra", "Alakazam", "Slowpoke", "Slowbro", "Drowzee", "Hypno", "Exeggcute", "Exeggcutor", "Starmie", "Mr. Mime", "Jynx", "Mewtwo", "Mew" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(jList1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -228,7 +312,16 @@ public class FramePokemonSelector extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jTextField1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jTextField1.setText("Name");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1KeyTyped(evt);
+            }
+        });
 
         jButton1.setText("Apply");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -238,6 +331,11 @@ public class FramePokemonSelector extends javax.swing.JFrame {
         });
 
         jButton2.setText("Cancel");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -280,16 +378,124 @@ public class FramePokemonSelector extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton15ActionPerformed
+    private void jtWaterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtWaterActionPerformed
+        updateState();
+        repaint();        // TODO add your handling code here:
+    }//GEN-LAST:event_jtWaterActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        PoGoCpCalc.frame.currentPokemon = Database.PokemonList.get(2);
+        String selectedPokemon = jList1.getSelectedValue();
+        String parts[] = selectedPokemon.split(" @ ");
+        Pokemon p = Database.stringToPokemon(parts[0]);
+        
+        PoGoCpCalc.frame.combo_choose_cp.setSelectedIndex(p.id);
+        PoGoCpCalc.frame.combo_choose_database.setSelectedIndex(p.id);
         dispose();
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jtBugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtBugActionPerformed
+        updateState();
+        repaint();        // TODO add your handling code here:
+    }//GEN-LAST:event_jtBugActionPerformed
+
+    private void jtDarkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtDarkActionPerformed
+        updateState();
+        repaint();        // TODO add your handling code here:
+    }//GEN-LAST:event_jtDarkActionPerformed
+
+    private void jtDragonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtDragonActionPerformed
+        updateState();
+        repaint();        // TODO add your handling code here:
+    }//GEN-LAST:event_jtDragonActionPerformed
+
+    private void jtElectricActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtElectricActionPerformed
+        updateState();
+        repaint();        // TODO add your handling code here:
+    }//GEN-LAST:event_jtElectricActionPerformed
+
+    private void jtFairyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtFairyActionPerformed
+        updateState();
+        repaint();        // TODO add your handling code here:
+    }//GEN-LAST:event_jtFairyActionPerformed
+
+    private void jtFightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtFightActionPerformed
+        updateState();
+        repaint();        // TODO add your handling code here:
+    }//GEN-LAST:event_jtFightActionPerformed
+
+    private void jtFireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtFireActionPerformed
+        updateState();
+        repaint();        // TODO add your handling code here:
+    }//GEN-LAST:event_jtFireActionPerformed
+
+    private void jtFlyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtFlyActionPerformed
+        updateState();
+        repaint();        // TODO add your handling code here:
+    }//GEN-LAST:event_jtFlyActionPerformed
+
+    private void jtGhostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtGhostActionPerformed
+        updateState();
+        repaint();        // TODO add your handling code here:
+    }//GEN-LAST:event_jtGhostActionPerformed
+
+    private void jtGrassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtGrassActionPerformed
+        updateState();
+        repaint();        // TODO add your handling code here:
+    }//GEN-LAST:event_jtGrassActionPerformed
+
+    private void jtGroundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtGroundActionPerformed
+        updateState();
+        repaint();        // TODO add your handling code here:
+    }//GEN-LAST:event_jtGroundActionPerformed
+
+    private void jtIceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtIceActionPerformed
+        updateState();
+        repaint();        // TODO add your handling code here:
+    }//GEN-LAST:event_jtIceActionPerformed
+
+    private void jtNormalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNormalActionPerformed
+        updateState();
+        repaint();        // TODO add your handling code here:
+    }//GEN-LAST:event_jtNormalActionPerformed
+
+    private void jtPoisonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtPoisonActionPerformed
+        updateState();
+        repaint();        // TODO add your handling code here:
+    }//GEN-LAST:event_jtPoisonActionPerformed
+
+    private void jtPsychicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtPsychicActionPerformed
+        updateState();
+        repaint();        // TODO add your handling code here:
+    }//GEN-LAST:event_jtPsychicActionPerformed
+
+    private void jtRockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtRockActionPerformed
+        updateState();
+        repaint();        // TODO add your handling code here:
+    }//GEN-LAST:event_jtRockActionPerformed
+
+    private void jtSteelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtSteelActionPerformed
+        updateState();
+        repaint();        // TODO add your handling code here:
+    }//GEN-LAST:event_jtSteelActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        updateState();
+        repaint();
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+        updateState();
+        repaint();
+    }//GEN-LAST:event_jTextField1KeyTyped
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -326,12 +532,15 @@ public class FramePokemonSelector extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new FramePokemonSelector().setVisible(true);
             }
         });
     }
 
+    
+    DefaultListModel<String> model = new DefaultListModel<>();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -341,23 +550,44 @@ public class FramePokemonSelector extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton10;
-    private javax.swing.JToggleButton jToggleButton11;
-    private javax.swing.JToggleButton jToggleButton12;
-    private javax.swing.JToggleButton jToggleButton13;
-    private javax.swing.JToggleButton jToggleButton14;
-    private javax.swing.JToggleButton jToggleButton15;
-    private javax.swing.JToggleButton jToggleButton16;
-    private javax.swing.JToggleButton jToggleButton17;
-    private javax.swing.JToggleButton jToggleButton18;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
-    private javax.swing.JToggleButton jToggleButton7;
-    private javax.swing.JToggleButton jToggleButton8;
-    private javax.swing.JToggleButton jToggleButton9;
+    private javax.swing.JToggleButton jtBug;
+    private javax.swing.JToggleButton jtDark;
+    private javax.swing.JToggleButton jtDragon;
+    private javax.swing.JToggleButton jtElectric;
+    private javax.swing.JToggleButton jtFairy;
+    private javax.swing.JToggleButton jtFight;
+    private javax.swing.JToggleButton jtFire;
+    private javax.swing.JToggleButton jtFly;
+    private javax.swing.JToggleButton jtGhost;
+    private javax.swing.JToggleButton jtGrass;
+    private javax.swing.JToggleButton jtGround;
+    private javax.swing.JToggleButton jtIce;
+    private javax.swing.JToggleButton jtNormal;
+    private javax.swing.JToggleButton jtPoison;
+    private javax.swing.JToggleButton jtPsychic;
+    private javax.swing.JToggleButton jtRock;
+    private javax.swing.JToggleButton jtSteel;
+    private javax.swing.JToggleButton jtWater;
     // End of variables declaration//GEN-END:variables
+
+    
+    private void updateState()
+    {
+        model.clear();
+        boolean state[] = {jtBug.isSelected(), jtDark.isSelected(), jtDragon.isSelected(), jtElectric.isSelected(),
+                           jtFairy.isSelected(), jtFight.isSelected(), jtFire.isSelected(), jtFly.isSelected(),
+                           jtGhost.isSelected(), jtGrass.isSelected(), jtGround.isSelected(), jtIce.isSelected(),
+                           jtNormal.isSelected(), jtPoison.isSelected(), jtPsychic.isSelected(), jtRock.isSelected(),
+                           jtSteel.isSelected(), jtWater.isSelected()};
+        String text = jTextField1.getText();
+        
+        //Pokemon view[] = Database.getViewSelectedPokemon(state, text);
+        ArrayList<Pokemon> view = Database.getViewSelectedPokemon(state, text);
+        
+        for(int i = 0; i< view.size(); i++){
+            model.addElement(view.get(i).getName()+ " @ " + view.get(i).getNumber());
+            repaint();
+        }
+    }
+    
 }

@@ -54,43 +54,43 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Component id="jToggleButton10" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtBug" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jToggleButton9" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtDark" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jToggleButton6" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtDragon" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jToggleButton11" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtElectric" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jToggleButton4" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtFairy" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jToggleButton5" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtFight" min="-2" pref="50" max="-2" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
-                  <Component id="jToggleButton1" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtNormal" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jToggleButton18" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtPoison" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jToggleButton17" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtPsychic" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jToggleButton16" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtRock" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jToggleButton7" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtSteel" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jToggleButton15" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtWater" min="-2" pref="50" max="-2" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
-                  <Component id="jToggleButton2" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtFire" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jToggleButton12" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtFly" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jToggleButton8" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtGhost" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jToggleButton3" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtGrass" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jToggleButton14" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtGround" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jToggleButton13" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtIce" min="-2" pref="50" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -98,39 +98,39 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jToggleButton10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton11" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtBug" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtDragon" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtDark" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtElectric" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtFairy" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtFight" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="jToggleButton12" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jToggleButton8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jToggleButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jToggleButton14" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jToggleButton13" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtFly" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtGhost" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtGrass" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtGround" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtIce" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jToggleButton2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtFire" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jToggleButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton17" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton18" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton16" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton15" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtNormal" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtPsychic" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtPoison" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtRock" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtSteel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtWater" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton6">
+        <Component class="javax.swing.JToggleButton" name="jtDragon">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f8" green="38" red="70" type="rgb"/>
@@ -140,8 +140,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Dragn"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtDragonActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton9">
+        <Component class="javax.swing.JToggleButton" name="jtDark">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="48" green="58" red="70" type="rgb"/>
@@ -151,8 +154,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Dark"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtDarkActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton10">
+        <Component class="javax.swing.JToggleButton" name="jtBug">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="20" green="b8" red="a8" type="rgb"/>
@@ -162,8 +168,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Bug"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtBugActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton11">
+        <Component class="javax.swing.JToggleButton" name="jtElectric">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="30" green="d0" red="f8" type="rgb"/>
@@ -173,8 +182,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Elect"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtElectricActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+        <Component class="javax.swing.JToggleButton" name="jtNormal">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="78" green="a8" red="a8" type="rgb"/>
@@ -184,8 +196,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Norml"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtNormalActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton18">
+        <Component class="javax.swing.JToggleButton" name="jtPoison">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a0" green="40" red="a0" type="rgb"/>
@@ -195,8 +210,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Poisn"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtPoisonActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton17">
+        <Component class="javax.swing.JToggleButton" name="jtPsychic">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="88" green="58" red="f8" type="rgb"/>
@@ -206,8 +224,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Psych"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtPsychicActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton16">
+        <Component class="javax.swing.JToggleButton" name="jtRock">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="38" green="a0" red="b8" type="rgb"/>
@@ -217,8 +238,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Rock"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtRockActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton7">
+        <Component class="javax.swing.JToggleButton" name="jtSteel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="d0" green="b8" red="b8" type="rgb"/>
@@ -228,8 +252,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Steel"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtSteelActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton15">
+        <Component class="javax.swing.JToggleButton" name="jtWater">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f0" green="90" red="68" type="rgb"/>
@@ -240,10 +267,10 @@
             <Property name="text" type="java.lang.String" value="Water"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton15ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtWaterActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton4">
+        <Component class="javax.swing.JToggleButton" name="jtFairy">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ac" green="99" red="ee" type="rgb"/>
@@ -253,8 +280,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Fairy"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtFairyActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton5">
+        <Component class="javax.swing.JToggleButton" name="jtFight">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="28" green="30" red="c0" type="rgb"/>
@@ -264,8 +294,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Fight"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtFightActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton2">
+        <Component class="javax.swing.JToggleButton" name="jtFire">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="30" green="80" red="f0" type="rgb"/>
@@ -275,8 +308,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Fire"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtFireActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton12">
+        <Component class="javax.swing.JToggleButton" name="jtFly">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f0" green="90" red="a8" type="rgb"/>
@@ -286,8 +322,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Fly"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtFlyActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton8">
+        <Component class="javax.swing.JToggleButton" name="jtGhost">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="98" green="58" red="70" type="rgb"/>
@@ -297,8 +336,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Ghost"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtGhostActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton3">
+        <Component class="javax.swing.JToggleButton" name="jtGrass">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="50" green="c8" red="78" type="rgb"/>
@@ -308,8 +350,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Grass"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtGrassActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton14">
+        <Component class="javax.swing.JToggleButton" name="jtGround">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="68" green="c0" red="e0" type="rgb"/>
@@ -317,10 +362,13 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="10" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Groud"/>
+            <Property name="text" type="java.lang.String" value="Groun"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtGroundActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton13">
+        <Component class="javax.swing.JToggleButton" name="jtIce">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="d8" green="d8" red="98" type="rgb"/>
@@ -330,6 +378,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Ice"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtIceActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -365,25 +416,12 @@
             <Component class="javax.swing.JList" name="jList1">
               <Properties>
                 <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                  <StringArray count="14">
-                    <StringItem index="0" value="Abra"/>
-                    <StringItem index="1" value="Kadabra"/>
-                    <StringItem index="2" value="Alakazam"/>
-                    <StringItem index="3" value="Slowpoke"/>
-                    <StringItem index="4" value="Slowbro"/>
-                    <StringItem index="5" value="Drowzee"/>
-                    <StringItem index="6" value="Hypno"/>
-                    <StringItem index="7" value="Exeggcute"/>
-                    <StringItem index="8" value="Exeggcutor"/>
-                    <StringItem index="9" value="Starmie"/>
-                    <StringItem index="10" value="Mr. Mime"/>
-                    <StringItem index="11" value="Jynx"/>
-                    <StringItem index="12" value="Mewtwo"/>
-                    <StringItem index="13" value="Mew"/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
+                <Property name="selectionMode" type="int" value="0"/>
               </Properties>
               <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JList&lt;&gt;(model)"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
@@ -429,8 +467,11 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Name"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField1KeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
@@ -444,6 +485,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Cancel"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

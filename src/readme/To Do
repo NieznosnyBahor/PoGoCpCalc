@@ -14,3 +14,51 @@ W bazie danych utworzyc kolekcje statystyk danych obrazkow, atakow innych pierdo
 % of fast attack dmg in relation to total dmg
 jProgressBar1.setToolTipText("<html>" + "% of fast attack dmg in relation to total dmg" + "<br>" + ratioDMG2 + "% / " + (100 - ratioDMG2) + "%" + "<br>" + "Full time: " + time);
 combo_fast.setModel(new javax.swing.DefaultComboBoxModel<>( Database.AttackFastMap.keySet().toArray(new String[Database.AttackFastMap.keySet().size()])));
+
+
+
+
+        ArrayList<Pokemon> pkmn = new ArrayList<Pokemon>();
+
+        for (int i = 0; i < PokemonList.size(); i++) {
+            for (EnumTypes type : EnumTypes.values()) {
+
+                if (       
+                        (
+                           ((PokemonList.get(i).getType1() == type) && state[type.getNumber(type)] == true) 
+                              ||
+                           ((PokemonList.get(i).getType2() == type) && state[type.getNumber(type)] == true) 
+                        )
+                              &&
+                           (PokemonList.get(i).getName().contains(text))
+                   )
+                { 
+                    pkmn.add(PokemonList.get(i));
+                }
+                else if(PokemonList.get(i).getName().contains(text))
+                {
+                    pkmn.add(PokemonList.get(i));
+                }
+
+            }
+        }
+        Set<Pokemon> set = new LinkedHashSet<>();
+        set.addAll(pkmn);
+        pkmn.clear();
+        pkmn.addAll(set);
+
+//        if (!text.isEmpty()) {
+//            for (int i = 0; i < pkmn.size(); i++) { // dla każdego pokemona w tej liście
+//                String name = pkmn.get(i).getName().toLowerCase();
+//                text = text.toLowerCase();
+//                
+//                if(!name.startsWith(text))
+//                {
+//                    pkmn.remove(i);
+//                }
+//            }
+//        }
+
+        
+        
+        return pkmn;
