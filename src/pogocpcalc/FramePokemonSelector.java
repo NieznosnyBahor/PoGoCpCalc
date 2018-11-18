@@ -318,6 +318,12 @@ public class FramePokemonSelector extends javax.swing.JFrame {
             }
         });
         jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField1KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField1KeyTyped(evt);
             }
@@ -379,7 +385,7 @@ public class FramePokemonSelector extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtWaterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtWaterActionPerformed
-        updateState();
+        updateState("pokemon");
         repaint();        // TODO add your handling code here:
     }//GEN-LAST:event_jtWaterActionPerformed
 
@@ -388,8 +394,8 @@ public class FramePokemonSelector extends javax.swing.JFrame {
         String parts[] = selectedPokemon.split(" @ ");
         Pokemon p = Database.stringToPokemon(parts[0]);
         
-        PoGoCpCalc.frame.combo_choose_cp.setSelectedIndex(p.id);
-        PoGoCpCalc.frame.combo_choose_database.setSelectedIndex(p.id);
+        PoGoCpCalc.frame.combo_choose_cp.setSelectedIndex(p.getId());
+        PoGoCpCalc.frame.combo_choose_database.setSelectedIndex(p.getId());
         dispose();
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -399,99 +405,109 @@ public class FramePokemonSelector extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jtBugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtBugActionPerformed
-        updateState();
+        updateState("pokemon");
         repaint();        // TODO add your handling code here:
     }//GEN-LAST:event_jtBugActionPerformed
 
     private void jtDarkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtDarkActionPerformed
-        updateState();
+        updateState("pokemon");
         repaint();        // TODO add your handling code here:
     }//GEN-LAST:event_jtDarkActionPerformed
 
     private void jtDragonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtDragonActionPerformed
-        updateState();
+        updateState("pokemon");
         repaint();        // TODO add your handling code here:
     }//GEN-LAST:event_jtDragonActionPerformed
 
     private void jtElectricActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtElectricActionPerformed
-        updateState();
+        updateState("pokemon");
         repaint();        // TODO add your handling code here:
     }//GEN-LAST:event_jtElectricActionPerformed
 
     private void jtFairyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtFairyActionPerformed
-        updateState();
+        updateState("pokemon");
         repaint();        // TODO add your handling code here:
     }//GEN-LAST:event_jtFairyActionPerformed
 
     private void jtFightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtFightActionPerformed
-        updateState();
+        updateState("pokemon");
         repaint();        // TODO add your handling code here:
     }//GEN-LAST:event_jtFightActionPerformed
 
     private void jtFireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtFireActionPerformed
-        updateState();
+        updateState("pokemon");
         repaint();        // TODO add your handling code here:
     }//GEN-LAST:event_jtFireActionPerformed
 
     private void jtFlyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtFlyActionPerformed
-        updateState();
+        updateState("pokemon");
         repaint();        // TODO add your handling code here:
     }//GEN-LAST:event_jtFlyActionPerformed
 
     private void jtGhostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtGhostActionPerformed
-        updateState();
+        updateState("pokemon");
         repaint();        // TODO add your handling code here:
     }//GEN-LAST:event_jtGhostActionPerformed
 
     private void jtGrassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtGrassActionPerformed
-        updateState();
+        updateState("pokemon");
         repaint();        // TODO add your handling code here:
     }//GEN-LAST:event_jtGrassActionPerformed
 
     private void jtGroundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtGroundActionPerformed
-        updateState();
+        updateState("pokemon");
         repaint();        // TODO add your handling code here:
     }//GEN-LAST:event_jtGroundActionPerformed
 
     private void jtIceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtIceActionPerformed
-        updateState();
+        updateState("pokemon");
         repaint();        // TODO add your handling code here:
     }//GEN-LAST:event_jtIceActionPerformed
 
     private void jtNormalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNormalActionPerformed
-        updateState();
+        updateState("pokemon");
         repaint();        // TODO add your handling code here:
     }//GEN-LAST:event_jtNormalActionPerformed
 
     private void jtPoisonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtPoisonActionPerformed
-        updateState();
+        updateState("pokemon");
         repaint();        // TODO add your handling code here:
     }//GEN-LAST:event_jtPoisonActionPerformed
 
     private void jtPsychicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtPsychicActionPerformed
-        updateState();
+        updateState("pokemon");
         repaint();        // TODO add your handling code here:
     }//GEN-LAST:event_jtPsychicActionPerformed
 
     private void jtRockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtRockActionPerformed
-        updateState();
+        updateState("pokemon");
         repaint();        // TODO add your handling code here:
     }//GEN-LAST:event_jtRockActionPerformed
 
     private void jtSteelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtSteelActionPerformed
-        updateState();
+        updateState("pokemon");
         repaint();        // TODO add your handling code here:
     }//GEN-LAST:event_jtSteelActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        updateState();
+        updateState("pokemon");
         repaint();
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
-        updateState();
+        updateState("pokemon");
         repaint();
     }//GEN-LAST:event_jTextField1KeyTyped
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        updateState("pokemon");
+        repaint();
+    }//GEN-LAST:event_jTextField1KeyPressed
+
+    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+        updateState("pokemon");
+        repaint();
+    }//GEN-LAST:event_jTextField1KeyReleased
     
     
     
@@ -571,7 +587,7 @@ public class FramePokemonSelector extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     
-    private void updateState()
+    private void updateState(String s)
     {
         model.clear();
         boolean state[] = {jtBug.isSelected(), jtDark.isSelected(), jtDragon.isSelected(), jtElectric.isSelected(),
@@ -582,6 +598,7 @@ public class FramePokemonSelector extends javax.swing.JFrame {
         String text = jTextField1.getText();
         
         //Pokemon view[] = Database.getViewSelectedPokemon(state, text);
+        
         ArrayList<Pokemon> view = Database.getViewSelectedPokemon(state, text);
         
         for(int i = 0; i< view.size(); i++){

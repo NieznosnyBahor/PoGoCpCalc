@@ -58,19 +58,24 @@ public abstract class Database {
         loadAttacksCharge();        // +
         loadAttacksCombobox();      // +
         createPokemonList();        // +
-        loadPokemonNames();       // +
-        loadPokemonStats();       // +
-        loadPokemonTypes();       // +
-        loadPokemonAttacks();     // +
+        loadPokemonNames();         // +
+        loadPokemonNumbers();       // +
+        loadPokemonStats();         // +
+        loadPokemonTypes();         // +
+        loadPokemonAttacks();       // +
         loadPokemonNamesComboBox(); // +
-        // System.out.println("\u2746");
+        // showMaxCP();             // +
+        //PokemonList.get(0).showPokemonInfo();
+        //PokemonList.get(1).showPokemonInfo();
+        //PokemonList.get(2).showPokemonInfo();
+        
         // show666();               // +
         // show1000();               // +
     }
 
     private static int loadNumberOfPokemon() {
         int nope = 0;
-        InputStream stream = Database.class.getResourceAsStream("/database/Pokemon_Stats");
+        InputStream stream = Database.class.getResourceAsStream("/database/Pokemon_Names");
         Scanner sc = new Scanner(stream);
         while (sc.hasNextLine()) {
             nope++;
@@ -484,7 +489,18 @@ public abstract class Database {
                     }
                 }
             }
-
+                
+        }
+    }
+    
+    private static void showMaxCP() {
+        for (int i = 0; i < NUMBER_OF_POKEMON; i++) {          // pokemon
+            String[] data = {   Integer.toString(PokemonList.get(i).getStat_att()),
+                                Integer.toString(PokemonList.get(i).getStat_def()),
+                                Integer.toString(PokemonList.get(i).getStat_sta()),
+                                "15","15","15","40.0"
+            };
+            System.out.println(PokemonList.get(i).getName() + " " + getCPofPokemonString(data) + "cp");
         }
     }
 
@@ -562,26 +578,52 @@ public abstract class Database {
     private static void loadPokemonAttacks() {
         InputStream stream = Database.class.getResourceAsStream("/database/Pokemon_Attacks");
         Scanner sc = new Scanner(stream);
-        int numberOfLine = 0;
         while (sc.hasNextLine()) {
-            String parts[] = sc.nextLine().split("\t"); // 0-number 1-fa[] 2-ca[]
-
+            char faX[];
+            char caX[];
+            String parts[] = sc.nextLine().split("\t"); // 0-id 1-fa[] 2-ca[]
+            
+            int number = Integer.parseInt(parts[0]);
+            
             String partsA[] = parts[1].split(",");
+            faX = new char[partsA.length];
             AttackFast[] fa = new AttackFast[partsA.length];
             for (int a = 0; a < partsA.length; a++) {
+                if(partsA[a].charAt(0)== '*') // ruch legacy
+                {
+                    faX[a] = '*';
+                    partsA[a] = partsA[a].substring(1);
+                }
+                else if(partsA[a].charAt(0)== '$') // ruch ekskluzywny
+                {
+                    faX[a] = '$';
+                    partsA[a] = partsA[a].substring(1);
+                }
+                
                 fa[a] = AttackFastMap.get(partsA[a]);
 //                System.out.println(AttackFastMap.get(partsA[a]));
             }
 
             String partsB[] = parts[2].split(",");
+            caX = new char[partsB.length];
             AttackCharge[] ca = new AttackCharge[partsB.length];
             for (int a = 0; a < partsB.length; a++) {
-//                System.out.println(AttackChargeMap.get(partsB[a]).name);
+                if(partsB[a].charAt(0)== '*') // ruch legacy
+                {
+                    caX[a] = '*';
+                    partsB[a] = partsB[a].substring(1);
+                }
+                else if(partsB[a].charAt(0)== '$') // ruch ekskluzywny
+                {
+                    caX[a] = '*';
+                    partsB[a] = partsB[a].substring(1);
+                }
                 ca[a] = AttackChargeMap.get(partsB[a]);
             }
-            PokemonList.get(numberOfLine).setFa(fa);
-            PokemonList.get(numberOfLine).setCa(ca);
-            numberOfLine++;
+            PokemonList.get(number).setFa(fa);
+            PokemonList.get(number).setFaX(faX);
+            PokemonList.get(number).setCa(ca);
+            PokemonList.get(number).setCaX(caX);
         }
         sc.close();
 
@@ -590,12 +632,14 @@ public abstract class Database {
     private static void loadPokemonTypes() {
         InputStream stream = Database.class.getResourceAsStream("/database/Pokemon_Types");
         Scanner sc = new Scanner(stream);
-        int numberOfLine = 0;
+        
         while (sc.hasNextLine()) {
+            
             String parts[] = sc.nextLine().split("\t"); // 0-number 1-type1 2-type2
-            PokemonList.get(numberOfLine).setType1(chooseType(parts[1]));
-            PokemonList.get(numberOfLine).setType2(chooseType(parts[2]));
-            numberOfLine++;
+            int id = Integer.parseInt(parts[0]);
+            PokemonList.get(id).setType1(chooseType(parts[1]));
+            PokemonList.get(id).setType2(chooseType(parts[2]));
+            
         }
         sc.close();
     }
@@ -603,14 +647,14 @@ public abstract class Database {
     private static void loadPokemonStats() {
         InputStream stream = Database.class.getResourceAsStream("/database/Pokemon_Stats");
         Scanner sc = new Scanner(stream);
-        int numberOfLine = 0;
+        
         while (sc.hasNextLine()) {
-            String parts[] = sc.nextLine().split("\t"); // 0-number 1-hp 2-att 3-def
-            PokemonList.get(numberOfLine).setNumber(Integer.parseInt(parts[0]));
-            PokemonList.get(numberOfLine).setStat_sta(Integer.parseInt(parts[1]));
-            PokemonList.get(numberOfLine).setStat_att(Integer.parseInt(parts[2]));
-            PokemonList.get(numberOfLine).setStat_def(Integer.parseInt(parts[3]));
-            numberOfLine++;
+            String parts[] = sc.nextLine().split("\t"); // 0-id 1-hp 2-att 3-def
+            int id = Integer.parseInt(parts[0]);
+            //PokemonList.get(number).setNumber(Integer.parseInt(parts[0]));
+            PokemonList.get(id).setStat_sta(Integer.parseInt(parts[1]));
+            PokemonList.get(id).setStat_att(Integer.parseInt(parts[2]));
+            PokemonList.get(id).setStat_def(Integer.parseInt(parts[3]));
         }
         sc.close();
     }
@@ -618,11 +662,12 @@ public abstract class Database {
     private static void loadPokemonNames() {
         InputStream stream = Database.class.getResourceAsStream("/database/Pokemon_Names");
         Scanner sc = new Scanner(stream);
-        int numberOfLine = 0;
         while (sc.hasNextLine()) {
+            
             String parts[] = sc.nextLine().split("\t"); // 0-number 1-name
-            PokemonList.get(numberOfLine).setName(parts[1]);
-            numberOfLine++;
+            int id = Integer.parseInt(parts[0]);
+            PokemonList.get(id).setName(parts[1]);
+//            numberOfLine++;
         }
         sc.close();
     }
@@ -637,6 +682,8 @@ public abstract class Database {
     }
 
     static AttackFast stringToFastAttack(String fast) {
+        if(fast.charAt(0) == '$' || fast.charAt(0) == '*')
+            fast = fast.substring(2);
         for (int i = 0; i < AttackFastList.size(); i++) {
             if (fast.equals(AttackFastList.get(i).name)) {
                 return AttackFastList.get(i);
@@ -646,6 +693,8 @@ public abstract class Database {
     }
 
     static AttackCharge stringToChargeAttack(String charge) {
+        if(charge.charAt(0) == '$' || charge.charAt(0) == '*')
+            charge = charge.substring(2);
         for (int i = 0; i < AttackChargeList.size(); i++) {
             if (charge.equals(AttackChargeList.get(i).name)) {
                 return AttackChargeList.get(i);
@@ -663,47 +712,30 @@ public abstract class Database {
         return null;
     }
 
-
     static ArrayList<Pokemon> getViewSelectedPokemon(boolean[] state, String text) {
-
+        text = text.toLowerCase();
         ArrayList<Pokemon> pkmn = new ArrayList<Pokemon>();
 
         for (int i = 0; i < PokemonList.size(); i++) {
-           
+
             for (EnumTypes type : EnumTypes.values()) {
 
-                if(text.isEmpty()) // Tylko typy
+                if (text.isEmpty()) // Tylko typy
                 {
-                    if (       
-                          (
-                             ((PokemonList.get(i).getType1() == type) && state[type.getNumber(type)] == true) 
-                              ||
-                             ((PokemonList.get(i).getType2() == type) && state[type.getNumber(type)] == true) 
-                          )
-                       )
-                    {
+                    if ((((PokemonList.get(i).getType1() == type) && state[type.getNumber(type)] == true)
+                            || ((PokemonList.get(i).getType2() == type) && state[type.getNumber(type)] == true))) {
                         pkmn.add(PokemonList.get(i));
                     }
-                    
-                }
-                else if(!text.isEmpty())
-                {
-                    if(     // Nazwa + typy
-                            (PokemonList.get(i).getName().contains(text))
-                            &&
-                            (
-                                ((PokemonList.get(i).getType1() == type) && state[type.getNumber(type)] == true) 
-                                    ||
-                                ((PokemonList.get(i).getType2() == type) && state[type.getNumber(type)] == true)
-                            ) 
-                       )
-                    {
+
+                } else if (!text.isEmpty()) {
+                    if ( // Nazwa + typy
+                            (PokemonList.get(i).getName().toLowerCase().contains(text))
+                            && (((PokemonList.get(i).getType1() == type) && state[type.getNumber(type)] == true)
+                            || ((PokemonList.get(i).getType2() == type) && state[type.getNumber(type)] == true))) {
                         pkmn.add(PokemonList.get(i));
-                    }
-                    else if(allStatesDown(state))       // Tylko nazwa
+                    } else if (allStatesDown(state)) // Tylko nazwa
                     {
-                        if(PokemonList.get(i).getName().contains(text))
-                        {
+                        if (PokemonList.get(i).getName().toLowerCase().contains(text)) {
                             pkmn.add(PokemonList.get(i));
                         }
                     }
@@ -715,35 +747,124 @@ public abstract class Database {
         pkmn.clear();
         pkmn.addAll(set);
 
-//        if (!text.isEmpty()) {
-//            for (int i = 0; i < pkmn.size(); i++) { // dla każdego pokemona w tej liście
-//                String name = pkmn.get(i).getName().toLowerCase();
-//                text = text.toLowerCase();
-//                
-//                if(!name.startsWith(text))
-//                {
-//                    pkmn.remove(i);
-//                }
-//            }
-//        }
-
-        
-        
         return pkmn;
     }
 
     private static boolean allStatesDown(boolean[] state) {
-        for (int i = 0; i < state.length; i++) 
-        {
-            if(state[i] == true)
-            {
+        for (int i = 0; i < state.length; i++) {
+            if (state[i] == true) {
                 return false;
             }
-            
+
         }
         return true;
     }
 
-    
+    static ArrayList<AttackFast> getViewSelectedFastAttack(boolean[] state, String text) {
+        text = text.toLowerCase();
+        ArrayList<AttackFast> listFast = new ArrayList<AttackFast>();
+        for (int i = 0; i < AttackFastList.size(); i++) {
+            for (EnumTypes type : EnumTypes.values()) {
 
+                if (text.isEmpty()) // Tylko typy
+                {
+                    if ((((AttackFastList.get(i).type == type) && state[type.getNumber(type)] == true))) {
+                        listFast.add(AttackFastList.get(i));
+                    }
+
+                } else if (!text.isEmpty()) {
+                    if ( // Nazwa + typy
+                            (AttackFastList.get(i).name.toLowerCase().contains(text))
+                            && (((AttackFastList.get(i).type == type) && state[type.getNumber(type)] == true))) {
+                        listFast.add(AttackFastList.get(i));
+                    } else if (allStatesDown(state)) // Tylko nazwa
+                    {
+                        if (AttackFastList.get(i).name.toLowerCase().contains(text)) {
+                            listFast.add(AttackFastList.get(i));
+                        }
+                    }
+                }
+
+            }
+        }
+        Set<AttackFast> set = new LinkedHashSet<>();
+        set.addAll(listFast);
+        listFast.clear();
+        listFast.addAll(set);
+
+        return listFast;
+    }
+
+    static ArrayList<AttackCharge> getViewSelectedChargeAttack(boolean[] state, String text) {
+        text = text.toLowerCase();
+        ArrayList<AttackCharge> listCharge = new ArrayList<AttackCharge>();
+        for (int i = 0; i < AttackChargeList.size(); i++) {
+            for (EnumTypes type : EnumTypes.values()) {
+
+                if (text.isEmpty()) // Tylko typy
+                {
+                    if ((AttackChargeList.get(i).type == type) && state[type.getNumber(type)] == true) {
+                        listCharge.add(AttackChargeList.get(i));
+                    }
+
+                } else if (!text.isEmpty()) {
+                    if ( // Nazwa + typy
+                            (AttackChargeList.get(i).name.toLowerCase().contains(text))
+                            && ((AttackChargeList.get(i).type == type) && state[type.getNumber(type)] == true)) {
+                        listCharge.add(AttackChargeList.get(i));
+                    } else if (allStatesDown(state)) // Tylko nazwa
+                    {
+                        if (AttackChargeList.get(i).name.toLowerCase().contains(text)) {
+                            listCharge.add(AttackChargeList.get(i));
+                        }
+                    }
+                }
+
+            }
+        }
+        Set<AttackCharge> set = new LinkedHashSet<>();
+        set.addAll(listCharge);
+        listCharge.clear();
+        listCharge.addAll(set);
+
+        return listCharge;
+    }
+
+    static int fastAttackToIntID(AttackFast af) {
+        
+        for(int a = 0; a< AttackFastList.size(); a++)
+        {
+            if(af.name.equals(AttackFastList.get(a).name))
+            {
+                return a;
+            }
+        }
+    return -1;
+    }
+
+    static int chargeAttackToIntID(AttackCharge ac) {
+        for(int a = 0; a< AttackChargeList.size(); a++)
+        {
+            if(ac.name.equals(AttackChargeList.get(a).name))
+            {
+                return a;
+            }
+        }
+    return -1;
+    }
+
+    private static void loadPokemonNumbers() {
+        InputStream stream = Database.class.getResourceAsStream("/database/Pokemon_Numbers");
+        Scanner sc = new Scanner(stream);
+        while (sc.hasNextLine()) {
+            
+            String parts[] = sc.nextLine().split("\t"); // 0-number 1-name
+            int id = Integer.parseInt(parts[0]);
+            PokemonList.get(id).setNumber(Integer.parseInt(parts[1]));
+//            numberOfLine++;
+        }
+        sc.close();
+    }
+
+    
 }

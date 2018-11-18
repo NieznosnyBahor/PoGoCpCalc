@@ -62,3 +62,31 @@ combo_fast.setModel(new javax.swing.DefaultComboBoxModel<>( Database.AttackFastM
         
         
         return pkmn;
+
+
+switch (s)
+        {
+            case "pokemon":
+            {
+                
+                
+                break;
+            }
+            case "fastattack":
+            {
+                break;
+            }
+            case "chargeattack":
+            {
+                break;
+            }
+            default:
+            {
+                System.out.println("Critical error!!!");
+            }
+                    
+                    
+                    
+        }
+
+150	Psycho Cut,Confusion	Psychic,Shadow Ball,Hyper Beam,Focus Blast,Flamethrower,Ice Beam,Thunderbolt

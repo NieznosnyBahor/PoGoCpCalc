@@ -1,9 +1,34 @@
-1	Tackle,Vine Whip	Power Whip,Seed Bomb,Sludge Bomb
-2	Razor Leaf,Vine Whip	Power Whip,Sludge Bomb,Solar Beam
-3	Razor Leaf,Vine Whip	Petal Blizzard,Sludge Bomb,Solar Beam,Frenzy Plant
-4	Ember,Scratch	Flame Burst,Flamethrower,Flame Charge
-5	Ember,Fire Fang,Scratch	Fire Punch,Flame Burst,Flamethrower
-6	Fire Spin,Air Slash,Ember,Wing Attack	Dragon Claw,Fire Blast,Overheat,Flamethrower,Blast Burn
-7	Tackle,Bubble	Aqua Jet,Aqua Tail,Water Pulse
-8	Bite,Water Gun	Aqua Jet,Hydro Pump,Ice Beam
-9	Bite,Water Gun	Flash Cannon,Hydro Pump,Ice Beam,Hydro Cannon
+0	Tackle,Vine Whip	Power Whip,Seed Bomb,Sludge Bomb
+1	Razor Leaf,Vine Whip	Power Whip,Sludge Bomb,Solar Beam
+2	Razor Leaf,Vine Whip	Petal Blizzard,Sludge Bomb,Solar Beam,$Frenzy Plant
+3	Ember,Scratch	Flame Burst,Flamethrower,Flame Charge
+4	Ember,Fire Fang,*Scratch	Fire Punch,Flame Burst,Flamethrower
+5	Fire Spin,Air Slash,*Ember,*Wing Attack	Dragon Claw,Fire Blast,Overheat,*Flamethrower,$Blast Burn
+6	Tackle,Bubble	Aqua Jet,Aqua Tail,Water Pulse
+7	Bite,Water Gun	Aqua Jet,Hydro Pump,Ice Beam
+8	Bite,Water Gun	Flash Cannon,Hydro Pump,Ice Beam,$Hydro Cannon
+9	Tackle,Bug Bite	Struggle
+10	Tackle,Bug Bite	Struggle
+11	Struggle Bug,Confusion,*Bug Bite	Bug Buzz,Psychic,Signal Beam
+12	Poison Sting,Bug Bite	Struggle
+13	Poison Sting,Bug Bite	Struggle
+14	Infestation,Poison Jab,*Bug Bite	Aerial Ace,Sludge Bomb,X-Scissor
+15	Tackle,Quick Attack	Aerial Ace,Air Cutter,Twister
+16	Steel Wing,Wing Attack	Aerial Ace,Air Cutter,Twister
+17	Steel Wing,Air Slash,*Wing Attack	Aerial Ace,Brave Bird,Hurricane,*Air Cutter
+18	Tackle,Quick Attack	Body Slam,Dig,Hyper Fang
+19	Tackle,Quick Attack	Crunch,Hyper Fang,Shadow Ball
+20	Bite,Quick Attack	Dig,Hyper Beam,Hyper Fang
+21	Bite,Quick Attack	Crunch,Hyper Beam,Hyper Fang
+22	Peck,Quick Attack	Aerial Ace,Drill Peck,Sky Attack,*Twister
+23	Peck,Steel Wing	Aerial Ace,Sky Attack,Drill Run,*Twister
+24	Acid,Poison Sting	Poison Fang,Sludge Bomb,Wrap,*Gunk Shot
+25	Acid,Bite	Dark Pulse,Gunk Shot,Sludge Wave
+26	Quick Attack,Thunder Shock,$Present	Discharge,Wild Charge,Thunderbolt,$Surf,*Thunder
+27	Spark,Volt Switch,*Thunder Shock	Brick Break,Wild Charge,Thunder Punch,*Thunder
+28	Volt Switch,Spark	Psychic,Thunder Punch,Wild Charge
+29	Mud Shot,Scratch	Dig,Rock Slide,Sand Tomb,*Rock Tomb
+30	Metal Claw,Powder Snow	Blizzard,Gyro Ball,Night Slash
+31	Metal Claw,Mud Shot	Bulldoze,Earthquake,Rock Tomb
+32	Metal Claw,Powder Snow	Blizzard,Gyro Ball,Bulldoze
+167	Psycho Cut,Confusion	Flamethrower,Ice Beam,Thunderbolt,Focus Blast,Psychic,*Hyper Beam,*Shadow Ball

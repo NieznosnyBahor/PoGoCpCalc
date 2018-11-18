@@ -240,7 +240,7 @@ public class Frame extends javax.swing.JFrame {
         jTabbedPane.setOpaque(true);
 
         p_left.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        p_left.setPreferredSize(new java.awt.Dimension(150, 392));
+        p_left.setPreferredSize(new java.awt.Dimension(180, 392));
 
         b_egg_raid.setText("Egg/Raid?");
         b_egg_raid.addActionListener(new java.awt.event.ActionListener() {
@@ -295,7 +295,7 @@ public class Frame extends javax.swing.JFrame {
                     .addComponent(combo_choose_cp, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_leftLayout.createSequentialGroup()
                         .addGroup(p_leftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -345,7 +345,7 @@ public class Frame extends javax.swing.JFrame {
         );
 
         p_right.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        p_right.setPreferredSize(new java.awt.Dimension(220, 392));
+        p_right.setPreferredSize(new java.awt.Dimension(210, 392));
         p_right.setRequestFocusEnabled(false);
         p_right.setVerifyInputWhenFocusTarget(false);
 
@@ -376,7 +376,7 @@ public class Frame extends javax.swing.JFrame {
         p_rightLayout.setHorizontalGroup(
             p_rightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_rightLayout.createSequentialGroup()
-                .addContainerGap(114, Short.MAX_VALUE)
+                .addContainerGap(48, Short.MAX_VALUE)
                 .addGroup(p_rightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_rightLayout.createSequentialGroup()
                         .addGroup(p_rightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -417,6 +417,7 @@ public class Frame extends javax.swing.JFrame {
         );
 
         p_middle.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        p_middle.setPreferredSize(new java.awt.Dimension(186, 392));
 
         b_catchIt.setText("Get CP of Pokemon");
         b_catchIt.addActionListener(new java.awt.event.ActionListener() {
@@ -435,7 +436,7 @@ public class Frame extends javax.swing.JFrame {
         });
 
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ball_s_1.png"))); // NOI18N
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_graphics/Ball_s_1.png"))); // NOI18N
         jLabel24.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel24MouseClicked(evt);
@@ -447,7 +448,7 @@ public class Frame extends javax.swing.JFrame {
         p_middleLayout.setHorizontalGroup(
             p_middleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(b_catchIt, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+            .addComponent(b_catchIt, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
             .addComponent(b_checkIt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         p_middleLayout.setVerticalGroup(
@@ -470,19 +471,19 @@ public class Frame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(p_middle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(p_right, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE))
+                .addComponent(p_right, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelCpCalcLayout.setVerticalGroup(
             panelCpCalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(p_right, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(p_left, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(p_middle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(p_middle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         jTabbedPane.addTab("CP of Pokemon", panelCpCalc);
 
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel4.setPreferredSize(new java.awt.Dimension(150, 392));
+        jPanel4.setPreferredSize(new java.awt.Dimension(180, 392));
 
         tf_2_base_hp.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
@@ -542,7 +543,7 @@ public class Frame extends javax.swing.JFrame {
                             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tf_2_base_hp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tf_2_base_att, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -625,7 +626,7 @@ public class Frame extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addGap(0, 153, Short.MAX_VALUE)
+                        .addGap(0, 87, Short.MAX_VALUE)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -663,16 +664,16 @@ public class Frame extends javax.swing.JFrame {
         );
 
         jPanel9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel9.setPreferredSize(new java.awt.Dimension(150, 392));
+        jPanel9.setPreferredSize(new java.awt.Dimension(186, 392));
 
         jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ball_s_1.png"))); // NOI18N
+        jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_graphics/Ball_s_1.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel61, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+            .addComponent(jLabel61, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -690,7 +691,7 @@ public class Frame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE))
         );
         panelStatsConverterLayout.setVerticalGroup(
             panelStatsConverterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -794,7 +795,7 @@ public class Frame extends javax.swing.JFrame {
         jTabbedPane.addTab("Candies per Evolve", panelCandiesEvolution);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.setPreferredSize(new java.awt.Dimension(150, 392));
+        jPanel1.setPreferredSize(new java.awt.Dimension(180, 392));
 
         combo_choose_database.setModel(new javax.swing.DefaultComboBoxModel<>( Database.pokemonNamesComboBox));
         combo_choose_database.addActionListener(new java.awt.event.ActionListener() {
@@ -820,7 +821,7 @@ public class Frame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                        .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(combo_choose_database, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -835,11 +836,11 @@ public class Frame extends javax.swing.JFrame {
                     .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(combo_choose_database, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(327, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel2.setPreferredSize(new java.awt.Dimension(150, 392));
+        jPanel2.setPreferredSize(new java.awt.Dimension(175, 392));
 
         jLabel28.setText("Base Stats");
 
@@ -859,6 +860,12 @@ public class Frame extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        jSpinner1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinner1StateChanged(evt);
             }
         });
 
@@ -907,7 +914,7 @@ public class Frame extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(0, 30, Short.MAX_VALUE)))
+                        .addGap(0, 66, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -951,12 +958,22 @@ public class Frame extends javax.swing.JFrame {
         int idfa = combo_choose_database.getSelectedIndex();
         String stfa[] = Database.PokemonList.get(idfa).getFaNames();
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>( stfa ));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jLabel64.setText("Charge Attack");
 
         int idca = combo_choose_database.getSelectedIndex();
         String stca[] = Database.PokemonList.get(idca).getCaNames();
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>( stca ));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Get DPS");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -985,26 +1002,28 @@ public class Frame extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGap(0, 98, Short.MAX_VALUE)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(0, 32, Short.MAX_VALUE)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel66, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                            .addComponent(jLabel68, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton4)
                             .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel60, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel66, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                                    .addComponent(jLabel68, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel60, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                                     .addComponent(jLabel59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel65, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel64, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel63, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel65, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jLabel64, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                            .addComponent(jLabel63, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -1042,7 +1061,7 @@ public class Frame extends javax.swing.JFrame {
             .addGroup(panelDatabaseLayout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1438,7 +1457,7 @@ public class Frame extends javax.swing.JFrame {
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(348, 348, 348))
+                .addGap(321, 321, 321))
         );
 
         jTabbedPane.addTab("Moveset", panelMoveset);
@@ -1685,9 +1704,21 @@ public class Frame extends javax.swing.JFrame {
         tf_1_base_sta.setText(data_pokemon[0]);
         tf_1_base_att.setText(data_pokemon[1]);
         tf_1_base_def.setText(data_pokemon[2]);
-
-        String path = "/img/" + (index + 1) + ".png";
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/oshawott.png")));
+        
+        String defaultPath = "/img_icons_pokemon/bulbasaur.png";
+        String path = "/img_icons_pokemon/" + Database.PokemonList.get(index).getName().toLowerCase() + ".png";
+        
+        try
+        {
+            jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource(path)));
+        }
+        catch(Exception e)
+        {
+            System.out.println("Brak obrazka.");
+            jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource(defaultPath)));
+        }
+        
+        //jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/oshawott.png")));
     }//GEN-LAST:event_combo_choose_cpActionPerformed
 
     private void bHowManyPokemonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHowManyPokemonActionPerformed
@@ -1794,7 +1825,7 @@ public class Frame extends javax.swing.JFrame {
             jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(strCA));
             repaint();
         } catch (NullPointerException exception) {
-            Konsola.exception("Invalid database record.");
+            Konsola.exception("Invalid database record.\nMoveset missed.");
             Konsola.printError("...");
         }
         //        String data_attacks[] = Database.getAttacksInfo();
@@ -1832,8 +1863,8 @@ public class Frame extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         int fastIndex = combo_fast.getSelectedIndex();
         int chargeIndex = combo_charge.getSelectedIndex();
-
-        double output[] = Database.calcDamagePerSecond(fastIndex, chargeIndex);
+        try {
+            double output[] = Database.calcDamagePerSecond(fastIndex, chargeIndex);
         double time = Math.round(output[3] * 100.0) / 100.0;
         jLabel46.setText(Double.toString(output[0]));
         jLabel54.setText(Double.toString(output[1]));
@@ -1857,6 +1888,10 @@ public class Frame extends javax.swing.JFrame {
         jProgressBar2.setValue(caBar2);
         jProgressBar1.setValue(faBar2);
         jProgressBar3.setValue(dpsBar);
+        } catch (Exception e) {
+            System.out.println("Błąd w funkcji liczącej dps movesetu.");
+        }
+        
         //        jProgressBar1.setValue(ratioDMG2);
         //        jProgressBar1.setToolTipText("<html>" + "% of fast attack dmg in relation to total dmg" + "<br>" + ratioDMG2 + "% / " + (100 - ratioDMG2) + "%" + "<br>" + "Full time: " + time);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -1879,6 +1914,7 @@ public class Frame extends javax.swing.JFrame {
                 break;
         }
         jLabel44.setToolTipText("Dmg window: " + Double.toString(Database.AttackChargeList.get(index).active));
+        jButton2.doClick();
     }//GEN-LAST:event_combo_chargeActionPerformed
 
     private void combo_fastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_fastActionPerformed
@@ -1888,6 +1924,7 @@ public class Frame extends javax.swing.JFrame {
         jLabel40.setText(Integer.toString(Database.AttackFastList.get(index).power));
         jLabel41.setText(Double.toString(Database.AttackFastList.get(index).time));
         jLabel57.setText(Integer.toString(Database.AttackFastList.get(index).energy));
+        jButton2.doClick();
     }//GEN-LAST:event_combo_fastActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -1899,8 +1936,7 @@ public class Frame extends javax.swing.JFrame {
         x = p.x;
         y = p.y;
         fr.setLocation(x - 50, y - 50);
-        
-        
+//        fr.jLabel1.setName("Fast Attacks");
         fr.setVisible(true);
 
     }//GEN-LAST:event_jButton7ActionPerformed
@@ -1945,10 +1981,42 @@ public class Frame extends javax.swing.JFrame {
         x = p.x;
         y = p.y;
         fr.setLocation(x - 50, y - 50);
-        
-        
+//        fr.jLabel1.setName("Charge Attacks");
         fr.setVisible(true);
     }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        double data[] = {Double.parseDouble(jLabel32.getText()), Double.parseDouble(jLabel33.getText()), Double.parseDouble(jLabel34.getText()), 15.0, 15.0, 15.0, (double) jSpinner1.getValue()};
+
+        String f[] = jComboBox1.getSelectedItem().toString().split("\\) ");
+        String c[] = jComboBox2.getSelectedItem().toString().split("\\) ");
+        AttackFast fast = Database.stringToFastAttack(f[1]);
+        AttackCharge charge = Database.stringToChargeAttack(c[1]);
+        double dps = Database.calcDamagePerSecond(fast, charge, data);
+        jLabel59.setText(Double.toString(dps));
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        double data[] = {Double.parseDouble(jLabel32.getText()), Double.parseDouble(jLabel33.getText()), Double.parseDouble(jLabel34.getText()), 15.0, 15.0, 15.0, (double) jSpinner1.getValue()};
+
+        String f[] = jComboBox1.getSelectedItem().toString().split("\\) ");
+        String c[] = jComboBox2.getSelectedItem().toString().split("\\) ");
+        AttackFast fast = Database.stringToFastAttack(f[1]);
+        AttackCharge charge = Database.stringToChargeAttack(c[1]);
+        double dps = Database.calcDamagePerSecond(fast, charge, data);
+        jLabel59.setText(Double.toString(dps));
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jSpinner1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner1StateChanged
+        double data[] = {Double.parseDouble(jLabel32.getText()), Double.parseDouble(jLabel33.getText()), Double.parseDouble(jLabel34.getText()), 15.0, 15.0, 15.0, (double) jSpinner1.getValue()};
+
+        String f[] = jComboBox1.getSelectedItem().toString().split("\\) ");
+        String c[] = jComboBox2.getSelectedItem().toString().split("\\) ");
+        AttackFast fast = Database.stringToFastAttack(f[1]);
+        AttackCharge charge = Database.stringToChargeAttack(c[1]);
+        double dps = Database.calcDamagePerSecond(fast, charge, data);
+        jLabel59.setText(Double.toString(dps));
+    }//GEN-LAST:event_jSpinner1StateChanged
 
     /**
      * @param args the command line arguments
@@ -2163,7 +2231,7 @@ public class Frame extends javax.swing.JFrame {
         FramePokemonSelector fps = new FramePokemonSelector();
         fps.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         fps.setVisible(true);
-        combo_choose_cp.setSelectedIndex(currentPokemon.id);
+        combo_choose_cp.setSelectedIndex(currentPokemon.getId());
 
     }
 
