@@ -1572,6 +1572,11 @@ public class Frame extends javax.swing.JFrame {
         });
 
         jButton3.setText("? Logs");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpBottomLayout = new javax.swing.GroupLayout(jpBottom);
         jpBottom.setLayout(jpBottomLayout);
@@ -2017,6 +2022,10 @@ public class Frame extends javax.swing.JFrame {
         double dps = Database.calcDamagePerSecond(fast, charge, data);
         jLabel59.setText(Double.toString(dps));
     }//GEN-LAST:event_jSpinner1StateChanged
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

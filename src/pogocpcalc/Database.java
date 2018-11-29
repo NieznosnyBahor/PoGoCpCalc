@@ -5,6 +5,7 @@
  */
 package pogocpcalc;
 
+import logs.Logs;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -65,9 +66,7 @@ public abstract class Database {
         loadPokemonAttacks();       // +
         loadPokemonNamesComboBox(); // +
         // showMaxCP();             // +
-        //PokemonList.get(0).showPokemonInfo();
-        //PokemonList.get(1).showPokemonInfo();
-        //PokemonList.get(2).showPokemonInfo();
+
         
         // show666();               // +
         // show1000();               // +
@@ -673,11 +672,7 @@ public abstract class Database {
     }
 
     private static void createLogSystem() {
-        try {
-            Logs.loadRecordSystem();
-        } catch (FileNotFoundException e) {
-            System.out.println("XDD");
-        }
+        
 
     }
 
